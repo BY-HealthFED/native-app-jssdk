@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "debug": false,
+        "loose": true,
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "Chrome > 28",
+            "Safari > 7.1"
+          ]
+        }
+      }
+    ]
+  ]
+}
