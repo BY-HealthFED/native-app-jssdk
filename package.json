@@ -1,5 +1,5 @@
 {
-  "name": "native-jssdk",
+  "name": "@byhealth/native-jssdk",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "scripts": {
@@ -13,5 +13,8 @@
     "babel-preset-env": "^1.6.1",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
