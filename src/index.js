@@ -84,9 +84,9 @@ export function batchSendSMS(mobiles, message) {
  */
 export function closeWindow() {
   if (isApplePlatform) {
-    document.location.href = 'js-back://memberApp/memberApp.backToActivityMenu';
+    document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
   } else if (isAndroidPlatform) {
-    nativeMemberJs.backToActivityMenu();
+    nativeJSBridge.backToActivityMenu();
   }
 }
 
