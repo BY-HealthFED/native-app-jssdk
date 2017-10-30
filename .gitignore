@@ -5,6 +5,7 @@ node_modules/
 
 # Compiled output
 build/
+dist/
 package-lock.json
 
 # Test coverage
