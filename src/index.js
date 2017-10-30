@@ -121,3 +121,38 @@ export function userInfo() {
 export function mobileVibrate() {
   applyNative('mobileVibrate');
 }
+
+/**
+ * 调用系统分享功能
+ * @param {Object} msg
+ * @param {string} msg.title
+ * @param {string} msg.content
+ * @param {string} msg.image
+ * @param {string} msg.url
+ * @returns {Promise}
+ */
+export function share({ title, content, image, url } = {}) {
+  return new Promise((resolve) => {
+    applyNative('share', title, content, image, url, createProxyCallback(resolve));
+  });
+}
+
+/**
+ * 显示右上角导航按钮
+ * @param {string} text 按钮文字
+ *
+ * @returns {Promise}
+ */
+export function showNavRightButton(text) {
+  return new Promise((resolve) => {
+    applyNative('showNavRightButton', text, createProxyCallback(resolve));
+  });
+}
+
+/**
+ * 隐藏已显示的右上角导航按钮
+ */
+export function hiddenNavRightButton() {
+  applyNative('hiddenNavRightButton');
+}
+

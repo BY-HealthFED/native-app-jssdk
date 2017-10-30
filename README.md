@@ -58,3 +58,23 @@ closeWindow(); // 关闭当前WebView
 ### 调用手机振动
 
 `mobileVibrate(): void`
+
+### 调用系统分享功能
+
+`share(info: Object): Promise<void>`
+
+  > info.title: 分享标题
+  >
+  > info.content: 分享内容
+  >
+  > info.image: 分享图片
+  >
+  > info.url: 分享链接
+
+### 显示右上角导航按钮
+
+`showNavRightButton(text: string): Promise<void>`
+
+### 隐藏已显示的右上角导航按钮
+
+`hiddenNavRightButton(): void`
