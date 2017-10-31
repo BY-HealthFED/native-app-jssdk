@@ -45,9 +45,9 @@ function createProxyCallback(cb) {
  * @returns {Promise}
  */
 export function scanBarCode() {
-  return new Promise(resolve =>
+  return new Promise(resolve => {
     applyNative('scanQrBarCode', 2, createProxyCallback(resolve))
-  );
+  });
 }
 
 /**
@@ -56,9 +56,9 @@ export function scanBarCode() {
  * @returns {Promise}
  */
 export function scanQrCode() {
-  return new Promise(resolve =>
+  return new Promise(resolve => {
     applyNative('scanQrBarCode', 1, createProxyCallback(resolve))
-  );
+  });
 }
 
 /**
@@ -67,7 +67,10 @@ export function scanQrCode() {
  * @param {String} message
  */
 export function sendSMS(mobile, message) {
-  applyNative('sendSmsToMobile', mobile, message);
+  return new Promise(resolve => {
+    applyNative('sendSmsToMobile', mobile, message);
+    resolve();
+  });
 }
 
 /**
@@ -76,17 +79,25 @@ export function sendSMS(mobile, message) {
  * @param {String} message
  */
 export function batchSendSMS(mobiles, message) {
-  applyNative('sendSmsToMobile', mobiles.join(';'), message);
+  return new Promise(resolve => {
+    applyNative('sendSmsToMobile', mobiles.join(';'), message);
+    resolve();
+  });
 }
 
 /**
  * 关闭WebView窗口
  */
 export function closeWindow() {
-  if (isApplePlatform) {
-    document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
-  } else if (isAndroidPlatform) {
-    nativeJSBridge.backToActivityMenu();
+  return new Promise(resolve => {
+    if (isAndroidPlatform) {
+      nativeJSBridge.backToActivityMenu();
+    } else if (isApplePlatform) {
+      document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
+    } else {
+      throw new Error('Platform does not support: closeWindow');
+    }
+    resolve();
   }
 }
 
@@ -95,7 +106,10 @@ export function closeWindow() {
  * @param {String} title
  */
 export function setTitle(title) {
-  applyNative('setWebTitle', title);
+  return new Promise((resolve) => {
+    applyNative('setWebTitle', title);
+    resolve();
+  });
 }
 
 /**
@@ -103,23 +117,29 @@ export function setTitle(title) {
  * @param {String} message
  */
 export function alert(message) {
-  applyNative('alert', message);
+  return new Promise((resolve) => {
+    applyNative('alert', message);
+    resolve();
+  });
 }
 
 /**
  * 获取用户信息
  */
 export function userInfo() {
-  return new Promise(resolve =>
+  return new Promise(resolve => {
     applyNative('getUserInfo', createProxyCallback(resolve))
-  );
+  });
 }
 
 /**
  * 调用手机振动
  */
 export function mobileVibrate() {
-  applyNative('mobileVibrate');
+  return new Promise((resolve) => {
+    applyNative('mobileVibrate');
+    resolve();
+  });
 }
 
 /**
@@ -153,6 +173,9 @@ export function showNavRightButton(text) {
  * 隐藏已显示的右上角导航按钮
  */
 export function hiddenNavRightButton() {
-  applyNative('hiddenNavRightButton');
+  return new Promise((resolve) => {
+    applyNative('hiddenNavRightButton');
+    resolve();
+  });
 }
 
