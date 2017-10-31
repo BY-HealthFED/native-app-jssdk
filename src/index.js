@@ -27,13 +27,15 @@ function applyNative(api, ...args) {
 /**
  * 创建一次性代理回调方法
  */
-function createProxyCallback(cb) {
+function createProxyCallback(cb, once) {
   const methodName = `__native_cb_${callbackIdentity++}`; // eslint-disable-line no-plusplus
   window[methodName] = (args) => {
     try {
       cb(args);
     } finally {
-      delete window[methodName];
+      if (once !== false) {
+        delete window[methodName];
+      }
     }
   };
   return methodName;
@@ -160,12 +162,14 @@ export function share({ title, content, image, url } = {}) {
 /**
  * 显示右上角导航按钮
  * @param {string} text 按钮文字
+ * @param {Function} onClick 点击触发事件
  *
  * @returns {Promise}
  */
-export function showNavRightButton(text) {
+export function showNavRightButton(text, onClick) {
   return new Promise((resolve) => {
-    applyNative('showNavRightButton', text, createProxyCallback(resolve));
+    applyNative('showNavRightButton', text, createProxyCallback(onClick, false));
+    resolve();
   });
 }
 
