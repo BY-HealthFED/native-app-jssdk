@@ -100,7 +100,7 @@ export function closeWindow() {
       throw new Error('Platform does not support: closeWindow');
     }
     resolve();
-  }
+  });
 }
 
 /**
