@@ -95,7 +95,7 @@ export function closeWindow() {
     if (isAndroidPlatform) {
       nativeJSBridge.backToActivityMenu();
     } else if (isApplePlatform) {
-      document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
+      document.location.href = `js-call://memberApp/memberApp.backToActivityMenu`;
     } else {
       throw new Error('Platform does not support: closeWindow');
     }
