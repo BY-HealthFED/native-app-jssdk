@@ -186,3 +186,36 @@ export function hiddenNavRightButton() {
     resolve();
   });
 }
+
+/**
+ * 开始播放音乐
+ * @param {string} url
+ */
+export function playMusic(url) {
+  return new Promise((resolve) => {
+    // type：参数值“1”为可控制的播放器，调用stopMusic和resumeMusic生效，
+    //       参数值为其它，则一直播放，调用stopMusic和resumeMusic不生效
+    applyNative('playMusic', url, /* type */1);
+    resolve();
+  });
+}
+
+/**
+ * 停止播放音乐
+ */
+export function stopMusic() {
+  return new Promise((resolve) => {
+    applyNative('stopMusic');
+    resolve();
+  });
+}
+
+/**
+ * 恢复播放音乐
+ */
+export function resumeMusic() {
+  return new Promise((resolve) => {
+    applyNative('resumeMusic');
+    resolve();
+  });
+}
