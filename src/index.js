@@ -15,6 +15,7 @@ let callbackIdentity = 0;
  * @param {Array} args
  */
 function applyNative(api, ...args) {
+
   if (isAndroidPlatform) {
     window.alert(`JSAPI: '${api}'`);
     nativeJSBridge[api](...args);
@@ -94,13 +95,7 @@ export function batchSendSMS(mobiles, message) {
  */
 export function closeWindow() {
   return new Promise(resolve => {
-    if (isAndroidPlatform) {
-      nativeJSBridge.backToActivityMenu();
-    } else if (isApplePlatform) {
-      document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
-    } else {
-      throw new Error('Platform does not support: closeWindow');
-    }
+    applyNative('backToActivityMenu');
     resolve();
   });
 }
