@@ -108,6 +108,49 @@ export function closeWindow() {
 }
 
 /**
+ * 当前页面有上一级页面时，调用会返回上一页面；
+ * 如果页面没有上一级页面，则关闭当前页面（Android不关闭）。
+ */
+export function goBack() {
+  return new Promise(resolve => {
+    applyNative('goBack');
+    resolve();
+  });
+}
+
+/**
+ * 跳转到指定页面
+ * @param {any} type 目前只识别参数值“1”，跳转到“中奖明细”页面
+ */
+export function goToPage(type) {
+  return new Promise(resolve => {
+    applyNative('goToPage', type);
+    resolve();
+  });
+}
+
+/**
+ * 监听返回按钮事件
+ * @param {Function} cb
+ */
+export function listenBack(cb) {
+  return new Promise(resolve => {
+    applyNative('setBack', 0, createProxyCallback(cb, false));
+    resolve();
+  });
+}
+
+/**
+ * 取消监听返回按钮事件
+ */
+export function unlistenBack() {
+  return new Promise(resolve => {
+    applyNative('setBack', 1);
+    resolve();
+  });
+}
+
+/**
  * 设置WebView的标题
  * @param {String} title
  */
