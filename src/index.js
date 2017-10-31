@@ -16,10 +16,10 @@ let callbackIdentity = 0;
  */
 function applyNative(api, ...args) {
   if (isAndroidPlatform) {
-    alert(`JSAPI: '${api}'`);
+    window.alert(`JSAPI: '${api}'`);
     nativeJSBridge[api](...args);
   } else if (isApplePlatform) {
-    alert(`Protocol: ${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`)
+    window.alert(`Protocol: ${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`)
     document.location.href = `${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`;
   } else {
     throw new Error(`Platform does not support: ${api}`);
