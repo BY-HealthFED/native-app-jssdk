@@ -5,8 +5,8 @@
  */
 const nativeProtocol = 'js-call://';
 const nativeJSBridge = window.MemberAppJs || window.memberApp || {};
-const isAndroidPlatform = navigator.userAgent.match(/android/ig);
-const isApplePlatform = navigator.userAgent.match(/iphone|ipod|ipad/ig);
+const isAndroidPlatform = !!navigator.userAgent.match(/android/ig);
+const isApplePlatform = !!navigator.userAgent.match(/iphone|ipod|ipad/ig);
 let callbackIdentity = 0;
 
 /**
@@ -16,8 +16,10 @@ let callbackIdentity = 0;
  */
 function applyNative(api, ...args) {
   if (isAndroidPlatform) {
+    alert(`JSAPI: '${api}'`);
     nativeJSBridge[api](...args);
   } else if (isApplePlatform) {
+    alert(`Protocol: ${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`)
     document.location.href = `${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`;
   } else {
     throw new Error(`Platform does not support: ${api}`);
@@ -95,7 +97,7 @@ export function closeWindow() {
     if (isAndroidPlatform) {
       nativeJSBridge.backToActivityMenu();
     } else if (isApplePlatform) {
-      document.location.href = `js-call://memberApp/memberApp.backToActivityMenu`;
+      document.location.href = `${nativeProtocol}memberApp/memberApp.backToActivityMenu`;
     } else {
       throw new Error('Platform does not support: closeWindow');
     }
