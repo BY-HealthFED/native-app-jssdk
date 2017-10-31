@@ -145,7 +145,7 @@ export function listenBack(cb) {
  */
 export function unlistenBack() {
   return new Promise(resolve => {
-    applyNative('setBack', 1);
+    applyNative('setBack', 1, createProxyCallback(() => {}));
     resolve();
   });
 }
