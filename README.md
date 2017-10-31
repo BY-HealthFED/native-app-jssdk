@@ -4,14 +4,14 @@
 
 ## 安装
 
-推荐使用yarn安装：`yarn add @byhealth/native-jssdk`
+推荐使用yarn安装：`yarn add @byhealth/native-app-jssdk`
 
-或使用NPM安装：`npm install @byhealth/native-jssdk`
+或使用NPM安装：`npm install @byhealth/native-app-jssdk`
 
 ## 使用
 
 ```javascript
-import { scanQrCode, closeWindow } from '@byhealth/native-jssdk';
+import { scanQrCode, closeWindow } from '@byhealth/native-app-jssdk';
 
 scanQrCode()
   .then(result => {
@@ -142,7 +142,7 @@ closeWindow(); // 关闭当前WebView
   返回结果:
   > 无
 
-### pauseMusic `pauseMusic(): Promise<void>`
+### 暂停播放音乐 `pauseMusic(): Promise<void>`
 
   返回结果:
   > 无
@@ -156,4 +156,4 @@ closeWindow(); // 关闭当前WebView
 
   1. Android的 `scanQrCode` 方法会去掉防伪码前面的url，而iOS不会；
   1. Android和iOS重复调用 `playMusic` 都方法不会重新播放音乐；
-  1. iOS端的API不能连续调用，会因为 **window.location.href** 变化太快而调用失败；
+  1. iOS端的API不能连续调用，会因为 **document.location.href** 变化太快而调用失败；
