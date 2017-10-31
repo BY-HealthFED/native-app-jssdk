@@ -8,7 +8,7 @@ const nativeJSBridge = window.MemberAppJs || window.memberApp || {};
 const isAndroidPlatform = !!navigator.userAgent.match(/android/ig);
 const isApplePlatform = !!navigator.userAgent.match(/iphone|ipod|ipad/ig);
 let callbackIdentity = 0;
-const __DEBUG__ = true;
+const __DEBUG__ = false;
 
 /**
  * 调用Native接口
