@@ -244,9 +244,9 @@ export function playMusic(url) {
 }
 
 /**
- * 停止播放音乐
+ * 暂停播放音乐
  */
-export function stopMusic() {
+export function pauseMusic() {
   return new Promise((resolve) => {
     applyNative('stopMusic');
     resolve();

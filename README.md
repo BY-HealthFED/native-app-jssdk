@@ -142,7 +142,7 @@ closeWindow(); // 关闭当前WebView
   返回结果:
   > 无
 
-### 停止播放音乐 `stopMusic(): Promise<void>`
+### pauseMusic `pauseMusic(): Promise<void>`
 
   返回结果:
   > 无
