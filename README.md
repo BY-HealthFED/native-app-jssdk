@@ -1,5 +1,5 @@
-## clone and install
-> Run with Node.js 7.x
+## use cases
+> npm i @byhealth/native-app-jssdk
 ```js
 import {
 	scanBarCode, // 扫描条形码
