@@ -1,7 +1,6 @@
 ## clone and install
 > Run with Node.js 7.x
 ```js
-import { h, Component } from 'preact';
 import {
 	scanBarCode, // 扫描条形码
 	scanQrCode, // 扫描识别二维码
@@ -23,10 +22,7 @@ import {
 	listenBack, // 监听返回按钮事件
 	unlistenBack, // 取消监听返回按钮事件
 } from '@byhealth/native-app-jssdk';
-import history from '~/core/history';
-import Modal from '~/components/Modal';
-import Loading from '~/components/Loading';
-import s from './style';
+...
 
 export default class Home extends Component {
 	constructor() {
