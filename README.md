@@ -186,5 +186,5 @@ closeWindow(); // 关闭当前WebView
 ## FAQ
 
   1. Android的 `scanQrCode` 方法会去掉防伪码前面的url，而iOS不会；
-  1. Android和iOS重复调用 `playMusic` 都方法不会重新播放音乐；
+  1. Android和iOS不允许重复调用 `playMusic` 播放音乐；
   1. iOS端的API不能连续调用，会因为 **document.location.href** 变化太快而调用失败；
