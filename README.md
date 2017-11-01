@@ -1,5 +1,6 @@
 ## use cases
 ```js
+...
 import {
 	scanBarCode, // 扫描条形码
 	scanQrCode, // 扫描识别二维码
