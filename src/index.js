@@ -159,6 +159,7 @@ export function unlistenBack() {
  */
 export function setTitle(title) {
   return new Promise((resolve) => {
+    document.title = title;
     applyNative('setWebTitle', title);
     resolve();
   });
