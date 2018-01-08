@@ -8,7 +8,8 @@ const nativeJSBridge = window.MemberAppJs || window.memberApp || {};
 const isAndroidPlatform = !!navigator.userAgent.match(/android/ig);
 const isApplePlatform = !!navigator.userAgent.match(/iphone|ipod|ipad/ig);
 let callbackIdentity = 0;
-const __DEBUG__ = false;
+
+export const __DEBUG__ = false;
 
 /**
  * 调用Native接口
@@ -28,7 +29,9 @@ function applyNative(api, ...args) {
       window.alert(`Protocol: ${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`)
     }
 
-    document.location.href = `${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`;
+    setTimeout(() => {
+      document.location.href = `${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`;
+    }, 10);
   } else {
     throw new Error(`Platform does not support: ${api}`);
   }
