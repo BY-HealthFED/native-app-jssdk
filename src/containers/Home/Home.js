@@ -34,7 +34,7 @@ export default class Home extends Component {
 			voiceId: null,
 			voiceStatus: '0',
 			menmerinfo: null,
-			pageTitle: '自定义标题',
+			pageTitle: '自定义标题'
 		};
 	}
 
@@ -161,6 +161,11 @@ export default class Home extends Component {
 			<div className="pdt1">
 				<h3 className="al-c pd1">native-jsssdk</h3>
 				<div className="w9-5 center">
+					<div className={s.block}>
+						<h4>webwiew_userAgent: <span className="gray">{window.navigator.userAgent}</span></h4>
+						<h5 className="pdt1">根据userAgent判断是否App环境：'/byHealth/ig.test(window.navigator.userAgent)'</h5>
+						<p className="pdt-5">isApp: <span className="red">{/byHealth/ig.test(window.navigator.userAgent).toString()}</span></p>
+					</div>
 					<div className={s.block}>
 						<button className="btn" onClick={this.scanBarCode}> 扫描条形码</button>
 					</div>
