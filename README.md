@@ -183,6 +183,10 @@ closeWindow(); // 关闭当前WebView
   > 返回结果:
   > * 无
 
+### `isApp(): Boolean`
+
+  检测是否在App浏览器下运行
+
 ## FAQ
 
   1. Android的 `scanQrCode` 方法会去掉防伪码前面的url，而iOS不会；
