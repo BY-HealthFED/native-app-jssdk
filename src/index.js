@@ -5,6 +5,7 @@
  */
 const nativeProtocol = 'js-call://';
 const nativeJSBridge = window.MemberAppJs || window.memberApp || {};
+const isApp = !!navigator.userAgent.match(/byHealth/ig);
 const isAndroidPlatform = !!navigator.userAgent.match(/android/ig);
 const isApplePlatform = !!navigator.userAgent.match(/iphone|ipod|ipad/ig);
 let callbackIdentity = 0;
@@ -17,6 +18,9 @@ export const __DEBUG__ = false;
  * @param {Array} args
  */
 function applyNative(api, ...args) {
+  if (!isApp) {
+    throw new Error(`Platform does not support: ${api}`);
+  }
 
   if (isAndroidPlatform) {
     if (__DEBUG__) {
@@ -32,8 +36,6 @@ function applyNative(api, ...args) {
     setTimeout(() => {
       document.location.href = `${nativeProtocol}${api}/${args.map(x => encodeURIComponent(x)).join('/')}`;
     }, 10);
-  } else {
-    throw new Error(`Platform does not support: ${api}`);
   }
 }
 
@@ -52,6 +54,13 @@ function createProxyCallback(cb, once) {
     }
   };
   return methodName;
+}
+
+/**
+ * 当前是否在App环境运行
+ */
+export function isApp() {
+  return isApp;
 }
 
 /**
