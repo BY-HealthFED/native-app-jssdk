@@ -146,10 +146,8 @@ export function goToPage(type) {
         }
         break;
       case 1:
-        applyNative('goToPage', type);
-        break;
-      default: applyNative('goToPage', type);
-        break;
+      default:
+        applyNative('goToPage', type); break;
     }
     resolve();
   });
