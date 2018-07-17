@@ -137,18 +137,21 @@ export function goBack() {
  */
 export function goToPage(type) {
   return new Promise(resolve => {
-    if (type === 'password') {
-      if (isAndroidPlatform) {
-        applyNative('openAppActivity', 'com.by_health.memberapp.activity.serviceplus.FindPasswordActivity');
-        resolve();
-      } else if (isApplePlatform) {
-        applyNative('openAppActivity', 'ExGetPasswordStep1ViewController');
-        resolve();
-      }
-    } else {
-      applyNative('goToPage', type);
-      resolve();
+    switch (type) {
+      case 'password':
+        if (isAndroidPlatform) {
+          applyNative('openAppActivity', 'com.by_health.memberapp.activity.serviceplus.FindPasswordActivity');
+        } else if (isApplePlatform) {
+          applyNative('openAppActivity', 'ExGetPasswordStep1ViewController');
+        }
+        break;
+      case 1:
+        applyNative('goToPage', type);
+        break;
+      default: applyNative('goToPage', type);
+        break;
     }
+    resolve();
   });
 }
 
