@@ -79,7 +79,8 @@ closeWindow(); // 关闭当前WebView
   跳转到指定页面
 
   > 参数列表：
-  > * type: 目前只识别参数值“1”，跳转到“中奖明细”页面
+  > * type: 目前识别参数值“1”，跳转到“中奖明细”页面
+  > *       目前识别参数值“password”，跳转到“找密码”页面。
   >
   > 返回结果:
   > * 无
@@ -186,17 +187,6 @@ closeWindow(); // 关闭当前WebView
 ### `isApp(): Boolean`
 
   检测是否在App浏览器下运行
-
-
-### `openAppActivity(args: string): Promise<void>`
-
-  跳转到指定原生APP模块
-
-  > 参数列表：
-  > * args: Android为包名，ios为模块名（由APP提供参数）
-  >
-  > 返回结果:
-  > * 无
 
 
 ## FAQ

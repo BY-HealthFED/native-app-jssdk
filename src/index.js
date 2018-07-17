@@ -132,12 +132,23 @@ export function goBack() {
 
 /**
  * 跳转到指定页面
- * @param {any} type 目前只识别参数值“1”，跳转到“中奖明细”页面
+ * @param {any} type 目前识别参数值“1”，跳转到“中奖明细”页面。
+ *                   目前识别参数值“password”，跳转到“找密码”页面。
  */
 export function goToPage(type) {
   return new Promise(resolve => {
-    applyNative('goToPage', type);
-    resolve();
+    if (type === 'password') {
+      if (isAndroidPlatform) {
+        applyNative('openAppActivity', 'com.by_health.memberapp.activity.serviceplus.FindPasswordActivity');
+        resolve();
+      } else if (isApplePlatform) {
+        applyNative('openAppActivity', 'ExGetPasswordStep1ViewController');
+        resolve();
+      }
+    } else {
+      applyNative('goToPage', type);
+      resolve();
+    }
   });
 }
 
@@ -272,16 +283,6 @@ export function pauseMusic() {
 export function resumeMusic() {
   return new Promise((resolve) => {
     applyNative('resumeMusic');
-    resolve();
-  });
-}
-
-/**
- * 跳转到原生APP模块
- */
-export function openAppActivity(args) {
-  return new Promise(function (resolve) {
-    applyNative('openAppActivity', args);
     resolve();
   });
 }
