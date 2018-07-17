@@ -275,3 +275,13 @@ export function resumeMusic() {
     resolve();
   });
 }
+
+/**
+ * 跳转到原生APP模块
+ */
+export function openAppActivity(args) {
+  return new Promise(function (resolve) {
+    applyNative('openAppActivity', args);
+    resolve();
+  });
+}
