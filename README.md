@@ -187,6 +187,18 @@ closeWindow(); // 关闭当前WebView
 
   检测是否在App浏览器下运行
 
+
+### `openAppActivity(args: string): Promise<void>`
+
+  跳转到指定原生APP模块
+
+  > 参数列表：
+  > * args: Android为包名，ios为模块名（由APP提供参数）
+  >
+  > 返回结果:
+  > * 无
+
+
 ## FAQ
 
   1. Android的 `scanQrCode` 方法会去掉防伪码前面的url，而iOS不会；
