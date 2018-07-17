@@ -147,7 +147,8 @@ export function goToPage(type) {
         break;
       case 1:
       default:
-        applyNative('goToPage', type); break;
+        applyNative('goToPage', type);
+        break;
     }
     resolve();
   });
