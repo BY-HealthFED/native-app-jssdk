@@ -1,6 +1,5 @@
 {
-  "private": true,
-  "name": "native-app-jssdk",
+  "name": "@byhealth/native-app-jssdk",
   "version": "2.0.0-alpha.1",
   "description": "By-Health Native App Jssdk.",
   "main": "dist/index.js",
@@ -10,11 +9,15 @@
     "build": "yarn clean && yarn build:cjs && yarn build:mjs",
     "build:cjs": "tsc -p tsconfig.json",
     "build:mjs": "tsc -p tsconfig.mjs.json",
-    "clean": "rimraf dist",
+    "clean": "rimraf build dist",
     "doc": "yarn doc:html && yarn doc:publish",
     "doc:html": "typedoc src/ --target ES6 --mode file --out build/docs",
-    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs"
+    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
+    "prepare": "yarn build"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^10.12.0",
