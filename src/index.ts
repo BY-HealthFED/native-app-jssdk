@@ -59,7 +59,7 @@ export function hiddenNavRightButton() {
  */
 export function scanQrCode() {
   return new Promise<string>(resolve => {
-    nativeBridge('scanQrBarCode', 2, createCallback(resolve));
+    nativeBridge('scanQrBarCode', 1, createCallback(resolve));
   });
 }
 
@@ -68,7 +68,7 @@ export function scanQrCode() {
  */
 export function scanBarCode() {
   return new Promise<string>(resolve => {
-    nativeBridge('scanQrBarCode', 1, createCallback(resolve));
+    nativeBridge('scanQrBarCode', 2, createCallback(resolve));
   });
 }
 
