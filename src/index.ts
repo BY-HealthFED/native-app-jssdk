@@ -5,14 +5,14 @@
  */
 
 import createCallback from './lib/createCallback';
-import nativeBridge from './lib/nativeBridge';
+import nativeBridge, { isAppWebview } from './lib/nativeBridge';
 import { ShareInfo, UserInfo } from './types/MemberAppJs';
 
 /**
  * 当前是否在App环境
  */
 export function isApp() {
-  return !!navigator.userAgent.match(/byhealth/gi);
+  return isAppWebview;
 }
 
 /**

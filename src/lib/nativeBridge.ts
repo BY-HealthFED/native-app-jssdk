@@ -44,4 +44,5 @@ function nativeBridge(api: string, ...args: any) {
   }
 }
 
+export { isAppWebview };
 export default nativeBridge;
