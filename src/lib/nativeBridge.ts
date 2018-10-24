@@ -27,9 +27,8 @@ function nativeBridge(api: string, ...args: any) {
     return;
   }
 
-  const apiFn = nativeJSBridge[api];
-  if (typeof apiFn === 'function') {
-    apiFn(...args);
+  if (typeof nativeJSBridge[api] === 'function') {
+    nativeJSBridge[api](...args);
   } else {
     const frame = document.createElement('iframe');
     frame.src = `${nativeProtocol}${api}/${args.map((x: any) => encodeURIComponent(x)).join('/')}`;
