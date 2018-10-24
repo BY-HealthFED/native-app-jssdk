@@ -138,7 +138,7 @@ export function unlistenBack() {
 /**
  * 调用手机振动
  */
-export function vibrate() {
+export function mobileVibrate() {
   nativeBridge('mobileVibrate');
 }
 

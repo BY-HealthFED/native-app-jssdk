@@ -28,7 +28,6 @@ closeWindow();
  * 重写 iOS 端调用方法，支持连续调用接口（1.x不支持）；
  * 部分接口名称或参数变化：
    - `userInfo()` => `getUserInfo()`
-   - `mobileVibrate()` => `vibrate()`
 
 ## API 文档
 
