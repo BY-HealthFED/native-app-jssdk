@@ -34,7 +34,9 @@ export function closeWindow() {
  * @param title 标题内容
  */
 export function setTitle(title: string) {
-  document.title = title;
+  if (document) {
+    document.title = title;
+  }
   nativeBridge('setWebTitle', title);
 }
 

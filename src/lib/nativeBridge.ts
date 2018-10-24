@@ -12,9 +12,10 @@ declare global {
   }
 }
 
+const global = window || {};
 const nativeProtocol = 'js-call://';
-const nativeJSBridge = window.MemberAppJs || window.memberApp || {};
-const isAppWebview = !!navigator.userAgent.match(/byhealth/gi);
+const nativeJSBridge = global.MemberAppJs || global.memberApp || {};
+const isAppWebview = global.navigator && global.navigator.userAgent && !!global.navigator.userAgent.match(/byhealth/gi);
 
 /**
  * Call the app native interface.
