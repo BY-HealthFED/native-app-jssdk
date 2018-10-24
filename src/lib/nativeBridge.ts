@@ -15,7 +15,9 @@ declare global {
 const global = window || {};
 const nativeProtocol = 'js-call://';
 const nativeJSBridge = global.MemberAppJs || global.memberApp || {};
-const isAppWebview = global.navigator && global.navigator.userAgent && !!global.navigator.userAgent.match(/byhealth/gi);
+const isAppWebview = Boolean(
+  global.navigator && global.navigator.userAgent && global.navigator.userAgent.match(/byhealth/gi),
+);
 
 /**
  * Call the app native interface.
