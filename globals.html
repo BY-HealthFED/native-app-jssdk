@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>native-app-jssdk</title>
+	<title>@byhealth/native-app-jssdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">native-app-jssdk</a>
+					<a href="index.html" class="title">@byhealth/native-app-jssdk</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> native-app-jssdk</h1>
+			<h1> @byhealth/native-app-jssdk</h1>
 		</div>
 	</div>
 </header>
@@ -74,6 +74,13 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/gender.html" class="tsd-kind-icon">Gender</a></li>
+								<li class="tsd-kind-enum"><a href="enums/roletype.html" class="tsd-kind-icon">Role<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/memberappjs.html" class="tsd-kind-icon">Member<wbr>App<wbr>Js</a></li>
@@ -85,6 +92,7 @@
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#cbidentity" class="tsd-kind-icon">cb<wbr>Identity</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#global" class="tsd-kind-icon">global</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#isappwebview" class="tsd-kind-icon">is<wbr>App<wbr>Webview</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#nativejsbridge" class="tsd-kind-icon">nativeJSBridge</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#nativeprotocol" class="tsd-kind-icon">native<wbr>Protocol</a></li>
@@ -97,10 +105,13 @@
 								<li class="tsd-kind-function"><a href="globals.html#batchsendsms" class="tsd-kind-icon">batch<wbr>SendSMS</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#closewindow" class="tsd-kind-icon">close<wbr>Window</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createcallback" class="tsd-kind-icon">create<wbr>Callback</a></li>
+								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#deprecated" class="tsd-kind-icon">deprecated</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getuserinfo" class="tsd-kind-icon">get<wbr>User<wbr>Info</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#goback" class="tsd-kind-icon">go<wbr>Back</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#hiddennavrightbutton" class="tsd-kind-icon">hidden<wbr>Nav<wbr>Right<wbr>Button</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isapp" class="tsd-kind-icon">is<wbr>App</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#listenback" class="tsd-kind-icon">listen<wbr>Back</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#mobilevibrate" class="tsd-kind-icon">mobile<wbr>Vibrate</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#nativebridge" class="tsd-kind-icon">native<wbr>Bridge</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#pausemusic" class="tsd-kind-icon">pause<wbr>Music</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#playmusic" class="tsd-kind-icon">play<wbr>Music</a></li>
@@ -111,6 +122,8 @@
 								<li class="tsd-kind-function"><a href="globals.html#settitle" class="tsd-kind-icon">set<wbr>Title</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#share" class="tsd-kind-icon">share</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#shownavrightbutton" class="tsd-kind-icon">show<wbr>Nav<wbr>Right<wbr>Button</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#unlistenback" class="tsd-kind-icon">unlisten<wbr>Back</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#userinfo" class="tsd-kind-icon">user<wbr>Info</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#vibrate" class="tsd-kind-icon">vibrate</a></li>
 							</ul>
 						</section>
@@ -125,7 +138,7 @@
 					<div class="tsd-signature tsd-kind-icon">cb<wbr>Identity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/createCallback.ts:7</li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/createCallback.ts#L7">lib/createCallback.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -136,22 +149,32 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
-					<a name="isappwebview" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>App<wbr>Webview</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>App<wbr>Webview<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;!!navigator.userAgent.match(/byhealth/gi)</span></div>
+					<a name="global" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> global</h3>
+					<div class="tsd-signature tsd-kind-icon">global<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Window</span><span class="tsd-signature-symbol"> =&nbsp;window || {}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/nativeBridge.ts:17</li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/nativeBridge.ts#L15">lib/nativeBridge.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="isappwebview" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>App<wbr>Webview</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>App<wbr>Webview<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;Boolean(global.navigator &amp;&amp; global.navigator.userAgent &amp;&amp; global.navigator.userAgent.match(/byhealth/gi),)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/nativeBridge.ts#L18">lib/nativeBridge.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 					<a name="nativejsbridge" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> nativeJSBridge</h3>
-					<div class="tsd-signature tsd-kind-icon">nativeJSBridge<span class="tsd-signature-symbol">:</span> <a href="interfaces/memberappjs.html" class="tsd-signature-type">MemberAppJs</a><span class="tsd-signature-symbol"> =&nbsp;window.MemberAppJs || window.memberApp || {}</span></div>
+					<div class="tsd-signature tsd-kind-icon">nativeJSBridge<span class="tsd-signature-symbol">:</span> <a href="interfaces/memberappjs.html" class="tsd-signature-type">MemberAppJs</a><span class="tsd-signature-symbol"> =&nbsp;global.MemberAppJs || global.memberApp || {}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/nativeBridge.ts:16</li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/nativeBridge.ts#L17">lib/nativeBridge.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,7 +184,7 @@
 					<div class="tsd-signature tsd-kind-icon">native<wbr>Protocol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"js-call://"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;js-call://&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/nativeBridge.ts:15</li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/nativeBridge.ts#L16">lib/nativeBridge.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:106</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L108">index.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -209,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:89</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L91">index.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -246,7 +269,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:28</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L28">index.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -268,7 +291,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/createCallback.ts:14</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/createCallback.ts#L14">lib/createCallback.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,6 +336,32 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+					<a name="deprecated" class="tsd-anchor"></a>
+					<h3>deprecated</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">deprecated<span class="tsd-signature-symbol">(</span>before<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, after<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L189">index.ts:189</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>before: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>after: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="getuserinfo" class="tsd-anchor"></a>
 					<h3>get<wbr>User<wbr>Info</h3>
@@ -323,7 +372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:96</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L98">index.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -345,7 +394,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:21</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L21">index.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -367,7 +416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:53</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L55">index.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -389,7 +438,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:14</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L14">index.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,6 +447,71 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="listenback" class="tsd-anchor"></a>
+					<h3>listen<wbr>Back</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">listen<wbr>Back<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L129">index.ts:129</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>监听返回按钮事件</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fn: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>回调事件</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="mobilevibrate" class="tsd-anchor"></a>
+					<h3>mobile<wbr>Vibrate</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">mobile<wbr>Vibrate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L143">index.ts:143</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>调用手机振动</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -411,7 +525,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/nativeBridge.ts:22</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/lib/nativeBridge.ts#L25">lib/nativeBridge.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -442,7 +556,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:143</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L160">index.ts:160</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,7 +578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:134</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L151">index.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -495,7 +609,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:150</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L167">index.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -517,7 +631,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:69</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L71">index.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -539,7 +653,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:60</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L62">index.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,7 +675,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:80</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L82">index.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -598,7 +712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:36</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L36">index.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -629,7 +743,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:117</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L119">index.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -683,7 +797,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:46</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L48">index.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -723,6 +837,54 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="unlistenback" class="tsd-anchor"></a>
+					<h3>unlisten<wbr>Back</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">unlisten<wbr>Back<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L136">index.ts:136</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>取消监听返回按钮事件</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="userinfo" class="tsd-anchor"></a>
+					<h3>user<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">user<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/userinfo.html" class="tsd-signature-type">UserInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L184">index.ts:184</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>获取用户信息</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/userinfo.html" class="tsd-signature-type">UserInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="vibrate" class="tsd-anchor"></a>
 					<h3>vibrate</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -732,13 +894,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.ts:126</li>
+									<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/b635a10/src/index.ts#L175">index.ts:175</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>调用手机振动</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -759,6 +925,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/gender.html" class="tsd-kind-icon">Gender</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/roletype.html" class="tsd-kind-icon">Role<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/memberappjs.html" class="tsd-kind-icon">Member<wbr>App<wbr>Js</a>
 					</li>
@@ -770,6 +942,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#cbidentity" class="tsd-kind-icon">cb<wbr>Identity</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#global" class="tsd-kind-icon">global</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#isappwebview" class="tsd-kind-icon">is<wbr>App<wbr>Webview</a>
@@ -792,6 +967,9 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createcallback" class="tsd-kind-icon">create<wbr>Callback</a>
 					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#deprecated" class="tsd-kind-icon">deprecated</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getuserinfo" class="tsd-kind-icon">get<wbr>User<wbr>Info</a>
 					</li>
@@ -803,6 +981,12 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isapp" class="tsd-kind-icon">is<wbr>App</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#listenback" class="tsd-kind-icon">listen<wbr>Back</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#mobilevibrate" class="tsd-kind-icon">mobile<wbr>Vibrate</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#nativebridge" class="tsd-kind-icon">native<wbr>Bridge</a>
@@ -833,6 +1017,12 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#shownavrightbutton" class="tsd-kind-icon">show<wbr>Nav<wbr>Right<wbr>Button</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#unlistenback" class="tsd-kind-icon">unlisten<wbr>Back</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#userinfo" class="tsd-kind-icon">user<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#vibrate" class="tsd-kind-icon">vibrate</a>
