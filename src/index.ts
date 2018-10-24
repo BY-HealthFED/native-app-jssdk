@@ -165,3 +165,26 @@ export function pauseMusic() {
 export function resumeMusic() {
   nativeBridge('resumeMusic');
 }
+
+/**
+ * 调用手机振动
+ * @deprecated
+ */
+export function vibrate() {
+  deprecated('vibrate', 'mobileVibrate');
+  return mobileVibrate();
+}
+
+/**
+ * 获取用户信息
+ * @deprecated
+ */
+export function userInfo() {
+  deprecated('userInfo', 'getUserInfo');
+  return getUserInfo();
+}
+
+function deprecated(before: string, after: string) {
+  // tslint:disable-next-line
+  console.error(`'${before}' has been deprecated, please replace it with '${after}'.`);
+}
