@@ -186,6 +186,12 @@ export function userInfo() {
   return getUserInfo();
 }
 
+/**
+ * 提示接口过时
+ * @param before
+ * @param after
+ * @ignore
+ */
 function deprecated(before: string, after: string) {
   // tslint:disable-next-line
   console.error(`'${before}' has been deprecated, please replace it with '${after}'.`);

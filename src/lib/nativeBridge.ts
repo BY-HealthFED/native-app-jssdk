@@ -5,6 +5,9 @@
  */
 import MemberAppJs from '../types/MemberAppJs';
 
+/**
+ * @ignore
+ */
 declare global {
   interface Window {
     MemberAppJs?: MemberAppJs;
@@ -12,15 +15,33 @@ declare global {
   }
 }
 
+/**
+ * 全局对象
+ * @ignore
+ */
 const global = window || {};
+
+/**
+ * 自定义协议
+ * @ignore
+ */
 const nativeProtocol = 'js-call://';
+/**
+ * 自定义注入对象
+ * @ignore
+ */
 const nativeJSBridge = global.MemberAppJs || global.memberApp || {};
+/**
+ * 是否App的Webview
+ * @ignore
+ */
 const isAppWebview = Boolean(
   global.navigator && global.navigator.userAgent && global.navigator.userAgent.match(/byhealth/gi),
 );
 
 /**
  * Call the app native interface.
+ * @ignore
  */
 function nativeBridge(api: string, ...args: any) {
   if (!isAppWebview) {

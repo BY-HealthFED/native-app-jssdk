@@ -194,6 +194,9 @@ export enum RoleType {
   // #endregion
 }
 
+/**
+ * 用户性别
+ */
 export enum Gender {
   /**
    * 男
@@ -205,8 +208,17 @@ export enum Gender {
   Female = 1,
 }
 
+/**
+ * 用户信息
+ */
 export interface UserInfo {
+  /**
+   * 角色类型
+   */
   roleType: RoleType;
+  /**
+   * 用户信息
+   */
   user: {
     usertel: string;
     usertypename: string;
@@ -216,6 +228,9 @@ export interface UserInfo {
     outterusername: string;
     outteruserid: string;
   };
+  /**
+   * 用户扩展信息
+   */
   userExt: {
     /**
      * 性别
@@ -229,6 +244,9 @@ export interface UserInfo {
      * 门店编号
      */
     storeNum: string;
+    /**
+     * 用户昵称
+     */
     userName: string;
     /**
      * 生日（时间戳）
@@ -247,6 +265,9 @@ export interface UserInfo {
     memberType: string;
   };
 
+  /**
+   * 门店信息
+   */
   store: {
     /**
      * 门店编号
@@ -266,6 +287,9 @@ export interface UserInfo {
   };
 }
 
+/**
+ * 分享信息
+ */
 export interface ShareInfo {
   title: string;
   content: string;
@@ -273,6 +297,10 @@ export interface ShareInfo {
   url: string;
 }
 
+/**
+ * Java native bridge
+ * @ignore
+ */
 export default interface MemberAppJs {
   [api: string]: (...args: any) => void;
 }
