@@ -16,7 +16,7 @@ export function isApp() {
 }
 
 /**
- * 返回上一级页面，如果没有上一级页面，则关闭当前页面（Android不关闭）。
+ * 返回上一级页面，如果没有上一级页面，则关闭当前页面。
  */
 export function goBack() {
   nativeBridge('goBack');
