@@ -31,4 +31,4 @@ closeWindow();
 
 ## API 文档
 
-[文档地址](https://by-healthfed.github.io/native-app-jssdk/globals.html#alert)
+[文档地址](https://by-healthfed.github.io/native-app-jssdk/)
