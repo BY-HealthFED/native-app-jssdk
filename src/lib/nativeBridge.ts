@@ -21,7 +21,11 @@ declare global {
  * @ignore
  */
 const global = window || {};
-
+/**
+ * UserAgent
+ * @ignore
+ */
+const userAgent = (global.navigator && global.navigator.userAgent) || '';
 /**
  * 自定义协议
  * @ignore
@@ -36,9 +40,17 @@ const nativeJSBridge = global.MemberAppJs || global.memberApp || {};
  * 是否App的Webview
  * @ignore
  */
-const isAppWebview = Boolean(
-  global.navigator && global.navigator.userAgent && global.navigator.userAgent.match(/byhealth/gi),
-);
+const isAppWebview = Boolean(userAgent.match(/byhealth/gi));
+/**
+ * 是否是Android环境
+ * @ignore
+ */
+const isAndroid = Boolean(userAgent.match(/android/gi));
+/**
+ * 是否是iOS环境
+ * @ignore
+ */
+const isIOS = Boolean(userAgent.match(/iphone|ipod|ipad/gi));
 
 /**
  * Call the app native interface.
@@ -68,5 +80,5 @@ function nativeBridge(api: string, ...args: any) {
   }
 }
 
-export { isAppWebview };
+export { isAppWebview, isAndroid, isIOS };
 export default nativeBridge;

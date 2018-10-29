@@ -5,7 +5,7 @@
  */
 
 import createCallback from './lib/createCallback';
-import nativeBridge, { isAppWebview } from './lib/nativeBridge';
+import nativeBridge, { isAppWebview, isAndroid } from './lib/nativeBridge';
 import { ShareInfo, UserInfo } from './types/MemberAppJs';
 
 /**
@@ -27,6 +27,15 @@ export function goBack() {
  */
 export function closeWindow() {
   nativeBridge('backToActivityMenu');
+}
+
+/**
+ * 打开原生视图窗口
+ * @param android Android视图名称
+ * @param ios iOS视图名称
+ */
+export function openNativeView(android: string, ios: string) {
+  nativeBridge('openAppActivity', isAndroid ? android : ios);
 }
 
 /**

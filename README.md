@@ -32,3 +32,7 @@ closeWindow();
 ## API 文档
 
 [文档地址](https://by-healthfed.github.io/native-app-jssdk/)
+
+## FAQ
+ - Android的 scanQrCode 方法会去掉防伪码前面的url，而iOS不会；
+ - Android和iOS不允许重复调用 playMusic 播放音乐；
