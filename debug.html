@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+		<head>
+				  <meta charset="utf-8">
+				    <meta http-equiv="x-ua-compatible" content="ie=edge">
+					  <title>调试</title>
+					    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+				</head>
+
+				<body>
+						  <ul id="logs">
+								    </ul>
+									  <script>
+											      var container = document.getElementById('logs');
+												      function log(msg) {
+															        var el = document.createElement('li');
+																	      el.innerText = msg;
+																		        container.appendChild(el);
+																				    }
+
+																					    log('typeof alert: ' + typeof alert);
+																						    log('typeof MemberAppJS: ' + typeof MemberAppJS);
+																							    log('typeof memberApp: ' + typeof memberApp);
+																								  </script>
+																						  </body>
+
+																				  </html>
+
