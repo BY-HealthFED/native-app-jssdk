@@ -27,7 +27,9 @@ closeWindow();
  * 无回调或返回的接口，不再返回Promise对象；
  * 重写 iOS 端调用方法，支持连续调用接口（1.x不支持）；
  * 部分接口名称或参数变化：
-   - `userInfo()` => `getUserInfo()`
+   - 新增 `openNativeView(android, ios)` 方法
+   - 重命名 `userInfo()` => `getUserInfo()` 方法
+   - 弃用 `goToPage()` 方法
 
 ## API 文档
 
