@@ -20,7 +20,7 @@ declare global {
  * 全局对象
  * @ignore
  */
-const global = window || {};
+const global = (typeof window === 'undefined' ? {} as any : window);
 /**
  * UserAgent
  * @ignore
