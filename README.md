@@ -38,3 +38,14 @@ closeWindow();
 ## FAQ
  - Android的 scanQrCode 方法会去掉防伪码前面的url，而iOS不会；
  - Android和iOS不允许重复调用 playMusic 播放音乐；
+
+
+## Changelog
+
+### `2.0.1`
+ - 修复 NodeJs 服务端找不到 window 的问题；
+
+### `2.0.0`
+ - 使用 TypeScript 重写SDK；
+ - 支持 ES6 语法导出模块；
+ - 支持多个接口连续调用；
