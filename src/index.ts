@@ -7,6 +7,7 @@
 import createCallback from './lib/createCallback';
 import nativeBridge, { isAppWebview, isAndroid } from './lib/nativeBridge';
 import { ShareInfo, UserInfo } from './types/MemberAppJs';
+import * as NativeView from './nativeView';
 
 /**
  * 当前是否在App环境
@@ -205,3 +206,5 @@ function deprecated(before: string, after: string) {
   // tslint:disable-next-line
   console.error(`'${before}' has been deprecated, please replace it with '${after}'.`);
 }
+
+export { NativeView };
