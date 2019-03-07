@@ -288,6 +288,203 @@ export interface UserInfo {
 }
 
 /**
+ * [新版]用户性别
+ */
+export enum NewUserGender {
+  /**
+   * 未知
+   */
+  Unknow = 0,
+  /**
+   * 男
+   */
+  Male = 1,
+  /**
+   * 女
+   */
+  Female = 2,
+}
+
+/**
+ * [新版]用户类型
+ */
+export enum NewMemberType {
+  /**
+   * 粉丝
+   */
+  Fans = 0,
+  /**
+   * 会员
+   */
+  Member = 1,
+  /**
+   * 内部人员
+   */
+  Insider = 2,
+  /**
+   * 同时是会员和内部人员
+   */
+  InsiderMember = 3,
+}
+
+/**
+ * [新版]用户角色
+ */
+export enum NewUserRole {
+  /**
+   * 店长
+   */
+  StoreManager = 1,
+  /**
+   * 店员
+   */
+  StoreAssistant = 1,
+}
+
+/**
+ * [新版]店员状态
+ */
+export enum NewUserStatus {
+  /**
+   * 未激活
+   */
+  Inactive = 0,
+  /**
+   * 启用
+   */
+  Enabled = 1,
+  /**
+   * 禁用
+   */
+  Disabled = 2,
+  /**
+   * 作废
+   */
+  Deactivate = 3,
+}
+/**
+ * [新版]用户信息
+ */
+export interface NewUserInfo {
+  /**
+   * 员工ID (店员ID)
+   */
+  memberId: number;
+  /**
+   * 登陆认证授权token
+   */
+  authToken: string;
+  /**
+   * 员工名称 (店员名称)
+   */
+  memberName: string;
+  /**
+   * 员工昵称 (店员昵称)
+   */
+  nickName: string;
+  /**
+   * 手机
+   */
+  mobilePhone: string;
+  /**
+   * 座机
+   */
+  telephone: string;
+  /**
+   * 1:男性2:女性0:未知
+   */
+  gender: NewUserGender;
+  /**
+   * 生日（YYYY-MM-DD)
+   */
+  birthday: string;
+  /**
+   * 会员类型
+   */
+  memberType: NewMemberType;
+  /**
+   * 头像链接
+   */
+  headimg: string;
+  /**
+   * 省份ID
+   */
+  regionProvinceId: number;
+  /**
+   * 市/行政区ID
+   */
+  regionCityId: number;
+  /**
+   * 城市ID
+   */
+  regionCountyId: number;
+  /**
+   * 地址
+   */
+  address: string;
+  /**
+   * 工作
+   */
+  job: string;
+  /**
+   * 兴趣爱好
+   */
+  hobby: string;
+  /**
+   * 公司名称
+   */
+  company: string;
+  /**
+   * 电子邮件
+   */
+  email: string;
+  /**
+   * 邮政编码
+   */
+  postCode: string;
+  /**
+   * 月收入
+   */
+  incomeMonth: string;
+  /**
+   * 身份证号
+   */
+  idcard: string;
+  /**
+   * 机构ID (门店ID)
+   */
+  orgId: string;
+  /**
+   * 机构编号 (门店编号)
+   */
+  orgNo: string;
+  /**
+   * 角色
+   */
+  roles: NewUserRole[];
+  /**
+   * 可用汤币
+   */
+  availableMoney: number;
+  /**
+   * 冻结汤币
+   */
+  freezingMoney: number;
+  /**
+   * 用户状态
+   */
+  status: NewUserStatus;
+  /**
+   * 创建时间 (2018-11-20T06:27:06.121Z)
+   */
+  createTime: string;
+  /**
+   * 更新时间 (2018-11-20T06:27:06.121Z)
+   */
+  updateTime: string;
+}
+
+/**
  * 分享信息
  */
 export interface ShareInfo {

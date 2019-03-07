@@ -6,7 +6,7 @@
 
 import createCallback from './lib/createCallback';
 import nativeBridge, { isAppWebview, isAndroid } from './lib/nativeBridge';
-import { ShareInfo, UserInfo } from './types/MemberAppJs';
+import { ShareInfo, UserInfo, NewUserInfo } from './types/MemberAppJs';
 import * as NativeView from './nativeView';
 
 /**
@@ -111,6 +111,12 @@ export function getUserInfo() {
   });
 }
 
+export function getNewUserInfo() {
+  return new Promise<NewUserInfo>(resolve => {
+    nativeBridge('getNewUserInfo', createCallback(resolve));
+  });
+}
+
 /**
  * 弹出原生消息提示框
  * @param message 消息内容
@@ -145,6 +151,21 @@ export function listenBack(fn: () => void) {
  */
 export function unlistenBack() {
   nativeBridge('setBack', 1, createCallback(() => {}));
+}
+
+/**
+ * 监听关闭按钮事件（iOS有效）
+ * @param fn 回调事件
+ */
+export function listenClose(fn: () => void) {
+  nativeBridge('setCloseCallBack', 0, createCallback(fn, false));
+}
+
+/**
+ * 取消监听关闭按钮事件（iOS有效）
+ */
+export function unlistenClose() {
+  nativeBridge('setCloseCallBack', 1, createCallback(() => {}));
 }
 
 /**
