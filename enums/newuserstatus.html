@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Gender | @byhealth/native-app-jssdk</title>
+	<title>NewUserStatus | @byhealth/native-app-jssdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="gender.html">Gender</a>
+					<a href="newuserstatus.html">NewUserStatus</a>
 				</li>
 			</ul>
-			<h1>Enumeration Gender</h1>
+			<h1>Enumeration NewUserStatus</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>用户性别</p>
+						<p>[新版]店员状态</p>
 					</div>
 				</div>
 			</section>
@@ -80,8 +80,10 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="gender.html#female" class="tsd-kind-icon">Female</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="gender.html#male" class="tsd-kind-icon">Male</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="newuserstatus.html#deactivate" class="tsd-kind-icon">Deactivate</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="newuserstatus.html#disabled" class="tsd-kind-icon">Disabled</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="newuserstatus.html#enabled" class="tsd-kind-icon">Enabled</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="newuserstatus.html#inactive" class="tsd-kind-icon">Inactive</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,32 +92,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="female" class="tsd-anchor"></a>
-					<h3>Female</h3>
-					<div class="tsd-signature tsd-kind-icon">Female<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<a name="deactivate" class="tsd-anchor"></a>
+					<h3>Deactivate</h3>
+					<div class="tsd-signature tsd-kind-icon">Deactivate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L208">types/MemberAppJs.ts:208</a></li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L363">types/MemberAppJs.ts:363</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>女</p>
+							<p>作废</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="male" class="tsd-anchor"></a>
-					<h3>Male</h3>
-					<div class="tsd-signature tsd-kind-icon">Male<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<a name="disabled" class="tsd-anchor"></a>
+					<h3>Disabled</h3>
+					<div class="tsd-signature tsd-kind-icon">Disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L204">types/MemberAppJs.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L359">types/MemberAppJs.ts:359</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>男</p>
+							<p>禁用</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="enabled" class="tsd-anchor"></a>
+					<h3>Enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L355">types/MemberAppJs.ts:355</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>启用</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="inactive" class="tsd-anchor"></a>
+					<h3>Inactive</h3>
+					<div class="tsd-signature tsd-kind-icon">Inactive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/by-healthFED/native-app-jssdk/blob/992e04b/src/types/MemberAppJs.ts#L351">types/MemberAppJs.ts:351</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>未激活</p>
 						</div>
 					</div>
 				</section>
@@ -131,21 +163,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum">
+					<li class=" tsd-kind-enum">
 						<a href="gender.html" class="tsd-kind-icon">Gender</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="gender.html#female" class="tsd-kind-icon">Female</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="gender.html#male" class="tsd-kind-icon">Male</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-enum">
 						<a href="newmembertype.html" class="tsd-kind-icon">New<wbr>Member<wbr>Type</a>
 					</li>
@@ -155,9 +175,27 @@
 					<li class=" tsd-kind-enum">
 						<a href="newuserrole.html" class="tsd-kind-icon">New<wbr>User<wbr>Role</a>
 					</li>
-					<li class=" tsd-kind-enum">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-enum">
 						<a href="newuserstatus.html" class="tsd-kind-icon">New<wbr>User<wbr>Status</a>
+						<ul>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="newuserstatus.html#deactivate" class="tsd-kind-icon">Deactivate</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="newuserstatus.html#disabled" class="tsd-kind-icon">Disabled</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="newuserstatus.html#enabled" class="tsd-kind-icon">Enabled</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="newuserstatus.html#inactive" class="tsd-kind-icon">Inactive</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-enum">
 						<a href="roletype.html" class="tsd-kind-icon">Role<wbr>Type</a>
 					</li>
