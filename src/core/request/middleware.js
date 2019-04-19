@@ -11,8 +11,7 @@ export function form(ctx, next) {
     switch (ctx.type) {
       case 'form':
         ctx.body = stringify(ctx.body);
-        ctx.headers['Content-Type'] =
-          'application/x-www-form-urlencoded;charset=utf-8';
+        ctx.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
         break;
       case 'json':
         ctx.body = JSON.stringify(ctx.body);
@@ -29,12 +28,7 @@ export function form(ctx, next) {
 export function http(ctx, next) {
   return Promise.resolve()
     .then(next)
-    .then(
-      response =>
-        response.status >= 200 && response.status <= 299
-          ? response
-          : Promise.reject(response),
-    );
+    .then(response => (response.status >= 200 && response.status <= 299 ? response : Promise.reject(response)));
 }
 
 export function json(ctx, next) {
@@ -74,9 +68,7 @@ export function timeout(ctx, next) {
       delete ctx.timeout;
       return Promise.race([
         next(),
-        new Promise((resolve, reject) =>
-          setTimeout(() => reject(new TimeoutError()), milliseconds),
-        ),
+        new Promise((resolve, reject) => setTimeout(() => reject(new TimeoutError()), milliseconds)),
       ]);
     }
   }

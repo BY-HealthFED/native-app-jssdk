@@ -17,10 +17,7 @@ export function mergeEntries(webpackConfig, entries) {
     webpackConfig.entry = './src';
   }
 
-  if (
-    Array.isArray(webpackConfig.entry) ||
-    typeof webpackConfig.entry === 'string'
-  ) {
+  if (Array.isArray(webpackConfig.entry) || typeof webpackConfig.entry === 'string') {
     webpackConfig.entry = entries.concat(webpackConfig.entry);
   } else {
     Object.keys(webpackConfig.entry).forEach(entry => {

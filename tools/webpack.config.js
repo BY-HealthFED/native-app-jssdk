@@ -29,9 +29,7 @@ const webpackConfig = {
   output: {
     path: paths.BUILD_DIR,
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
-    chunkFilename: isDev
-      ? 'chunks/[name].js'
-      : 'chunks/[name].[chunkhash:8].js',
+    chunkFilename: isDev ? 'chunks/[name].js' : 'chunks/[name].[chunkhash:8].js',
     publicPath: process.env.PUBLIC_URL || '',
   },
 
@@ -113,9 +111,7 @@ const webpackConfig = {
               sourceMap: isDev,
               // CSS Modules https://github.com/css-modules/css-modules
               modules: true,
-              localIdentName: isDev
-                ? '[name]-[local]-[hash:base64:5]'
-                : '[hash:base64:5]',
+              localIdentName: isDev ? '[name]-[local]-[hash:base64:5]' : '[hash:base64:5]',
             },
           },
 

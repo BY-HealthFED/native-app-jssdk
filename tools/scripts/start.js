@@ -50,15 +50,13 @@ function start() {
   // Apply proxy middlewares
   // https://github.com/chimurai/http-proxy-middleware#proxycontext-config
   if (Array.isArray(proxyConfig) && proxyConfig.length) {
-    proxyConfig.forEach(({ context, ...config }) =>
-      server.use(httpProxyMiddleware(context || '/', config)),
-    );
+    proxyConfig.forEach(({ context, ...config }) => server.use(httpProxyMiddleware(context || '/', config)));
   }
 
   return new Promise((resolve, reject) => {
     // Binds and listens for connections on the specified host and port.
     // http://expressjs.com/en/api.html#app.listen
-    server.listen(port, err => {
+    server.listen(port, '0.0.0.0', err => {
       if (err) {
         return reject(err);
       }

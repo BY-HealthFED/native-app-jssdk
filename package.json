@@ -16,7 +16,7 @@
     "start": "babel-node tools/cli start --dev",
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:js": "eslint \"{src,tools}/**/*.{js,jsx}\"",
-    "lint:css": "stylelint \"src/**/*.{css,less,scss,sass}\" --allow-empty-input"
+    "lint:css": "stylelint \"src/**/*.{css,less,scss,sass}\""
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",

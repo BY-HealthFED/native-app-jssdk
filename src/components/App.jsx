@@ -14,6 +14,7 @@ class App extends React.Component {
         { title: '批量发送短信给手机', btn: 'batchSendSMS' },
         { title: '关闭窗口', btn: 'closeWindow' },
         { title: '获取用户信息', btn: 'getUserInfo' },
+        { title: '获取用户信息（新）', btn: 'getNewUserInfo' },
         { title: '返回上一级页面，如果没有上一级页面，则关闭当前页面（Android不关闭）', btn: 'goBack' },
         { title: '显示右上角导航按钮', btn: 'showNavRightButton' },
         { title: '隐藏右上角导航按钮', btn: 'hiddenNavRightButton' },
@@ -48,7 +49,12 @@ class App extends React.Component {
         break;
       case 'getUserInfo':
         jssdk.getUserInfo().then(result => {
-          alert(JSON.stringify(result));
+          alert(JSON.stringify(result)); // eslint-disable-line
+        });
+        break;
+      case 'getNewUserInfo':
+        jssdk.getUserInfo().then(result => {
+          alert(JSON.stringify(result)); // eslint-disable-line
         });
         break;
       case 'goBack':
@@ -93,7 +99,7 @@ class App extends React.Component {
         });
         break;
       case 'listenBack':
-        jssdk.listenBack(function() {
+        jssdk.listenBack(() => {
           jssdk.alert('监听返回按钮事件');
         });
         break;
@@ -103,26 +109,24 @@ class App extends React.Component {
       default:
         break;
     }
-  }
+  };
 
   rightBtn = () => {
-    jssdk.alert('被点击了')
+    jssdk.alert('被点击了');
   };
 
   render() {
     const { sdkArr } = this.state;
     return (
       <div className={s.vessel}>
-        {sdkArr.map((item, idx) => {
-          return (
-            <div key={idx}>
-              <p className={s.title}>{item.title}：</p>
-              <button type="button" className={s.btn} onClick={this.handleClick(item.btn)}>
-                {item.btn}
-              </button>
-            </div>
-          );
-        })}
+        {sdkArr.map(item => (
+          <div key={item.btn}>
+            <p className={s.title}>{item.title}：</p>
+            <button type="button" className={s.btn} onClick={this.handleClick(item.btn)}>
+              {item.btn}
+            </button>
+          </div>
+        ))}
       </div>
     );
   }

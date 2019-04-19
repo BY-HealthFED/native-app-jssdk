@@ -10,11 +10,7 @@ import App from './components/App';
 let mountPoint;
 
 function renderer() {
-  mountPoint = render(
-    <App />,
-    document.getElementById('react-root'),
-    mountPoint,
-  );
+  mountPoint = render(<App />, document.getElementById('react-root'), mountPoint);
 }
 
 bootstrap().then(renderer);

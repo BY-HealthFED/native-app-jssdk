@@ -40,19 +40,14 @@ class Request {
 
   applyFetch({ url, params, baseUrl, ...options }) {
     if (typeof url !== 'string') {
-      throw new TypeError(
-        `Parameter 'url' must be a string, not ${typeof url}`,
-      );
+      throw new TypeError(`Parameter 'url' must be a string, not ${typeof url}`);
     }
 
     const _baseUrl = isAbsoluteUrl(url) ? '' : baseUrl; // eslint-disable-line
     const queryString = stringify(params);
     const concatSymbol = url.indexOf('?') > -1 ? '&' : '?';
 
-    return fetch(
-      `${_baseUrl}${url}${queryString && concatSymbol + queryString}`,
-      options,
-    );
+    return fetch(`${_baseUrl}${url}${queryString && concatSymbol + queryString}`, options);
   }
 
   fetch(url, options) {
