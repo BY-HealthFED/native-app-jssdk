@@ -4,8 +4,8 @@
 
 ### 安装
 
- * Yarn: `yarn add @byhealth/native-app-jssdk@next`
- * NPM: `npm install @byhealth/native-app-jssdk@next --save`
+ * Yarn: `yarn add @byhealth/native-app-jssdk`
+ * NPM: `npm install @byhealth/native-app-jssdk --save`
 
 ### 使用
 
