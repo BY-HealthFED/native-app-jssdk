@@ -17,6 +17,18 @@ export function isApp() {
 }
 
 /**
+ * 获取App当前版本信息
+ * @returns {Promise<string>} iOS,4.1.0 或者 Android,4.1.0
+ */
+export function getVersion() {
+  return new Promise<string>((resolve, reject) => {
+    nativeBridge('getAPPVersion', createCallback(resolve));
+
+    setTimeout(() => reject(unsupported('getAPPVersion')), 1000);
+  });
+}
+
+/**
  * 返回上一级页面，如果没有上一级页面，则关闭当前页面。
  */
 export function goBack() {
@@ -226,6 +238,15 @@ export function userInfo() {
 function deprecated(before: string, after: string) {
   // tslint:disable-next-line
   console.error(`'${before}' has been deprecated, please replace it with '${after}'.`);
+}
+
+/**
+ * 提示不支持接口
+ * @param api 接口名称
+ *  @ignore
+ */
+function unsupported(api: string) {
+  throw new TypeError(`Native webview does not support '${api}' API`);
 }
 
 export { NativeView };
