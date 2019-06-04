@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       sdkArr: [
         { title: '弹出原生消息提示框', btn: 'alert' },
+        { title: '获取App版本', btn: 'getVersion' },
         { title: '发送短信给指定手机', btn: 'sendSMS' },
         { title: '批量发送短信给手机', btn: 'batchSendSMS' },
         { title: '关闭窗口', btn: 'closeWindow' },
@@ -37,6 +38,14 @@ class App extends React.Component {
     switch (btn) {
       case 'alert':
         jssdk.alert('测试alert');
+        break;
+      case 'getVersion':
+        jssdk
+          .getVersion()
+          .then(version => jssdk.alert(version))
+          .catch(() => {
+            jssdk.alert('当前app版本不支持获取版本号');
+          });
         break;
       case 'sendSMS':
         jssdk.sendSMS('13750004660', '短信测试sendSMS');
