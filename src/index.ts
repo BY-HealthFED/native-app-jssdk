@@ -24,7 +24,7 @@ export function getVersion() {
   return new Promise<string>((resolve, reject) => {
     nativeBridge('getAPPVersion', createCallback(resolve));
 
-    setTimeout(() => reject(unsupported('getAPPVersion')), 1000);
+    setTimeout(() => reject(unsupported('getAPPVersion')), 500);
   });
 }
 

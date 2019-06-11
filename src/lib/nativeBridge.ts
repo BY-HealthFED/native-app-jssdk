@@ -20,12 +20,12 @@ declare global {
  * 全局对象
  * @ignore
  */
-const global = (typeof window === 'undefined' ? {} as any : window);
+const global: any = typeof window === 'undefined' ? {} : window;
 /**
  * UserAgent
  * @ignore
  */
-const userAgent = (global.navigator && global.navigator.userAgent) || '';
+const userAgent: string = (global.navigator && global.navigator.userAgent) || '';
 /**
  * 自定义协议
  * @ignore
@@ -61,9 +61,9 @@ function nativeBridge(api: string, ...args: any) {
     return;
   }
 
-  if (typeof nativeJSBridge[api] === 'function') {
+  if (isAndroid && typeof nativeJSBridge[api] === 'function') {
     nativeJSBridge[api](...args);
-  } else {
+  } else if (isIOS) {
     const frame = document.createElement('iframe');
     frame.src = `${nativeProtocol}${api}/${args.map((x: any) => encodeURIComponent(x)).join('/')}`;
     frame.style.position = 'absolute';
