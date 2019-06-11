@@ -24,7 +24,7 @@ export function getVersion() {
   return new Promise<string>((resolve, reject) => {
     nativeBridge('getAPPVersion', createCallback(resolve));
 
-    setTimeout(() => reject(unsupported('getAPPVersion')), 500);
+    setTimeout(() => reject(unsupported('getAPPVersion', false)), 500);
   });
 }
 
@@ -245,8 +245,13 @@ function deprecated(before: string, after: string) {
  * @param api 接口名称
  *  @ignore
  */
-function unsupported(api: string) {
-  throw new TypeError(`Native webview does not support '${api}' API`);
+function unsupported(api: string, isThrow: boolean = true) {
+  const error = new TypeError(`Native webview does not support '${api}' API`);
+  if (isThrow) {
+    throw error;
+  } else {
+    return error;
+  }
 }
 
 export { NativeView };
