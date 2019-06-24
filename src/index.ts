@@ -21,10 +21,8 @@ export function isApp() {
  * @returns {Promise<string>} iOS,4.1.0 或者 Android,4.1.0
  */
 export function getVersion() {
-  return new Promise<string>((resolve, reject) => {
+  return new Promise<string>(resolve => {
     nativeBridge('getAPPVersion', createCallback(resolve));
-
-    setTimeout(() => reject(unsupported('getAPPVersion', false)), 500);
   });
 }
 
@@ -238,20 +236,6 @@ export function userInfo() {
 function deprecated(before: string, after: string) {
   // tslint:disable-next-line
   console.error(`'${before}' has been deprecated, please replace it with '${after}'.`);
-}
-
-/**
- * 提示不支持接口
- * @param api 接口名称
- *  @ignore
- */
-function unsupported(api: string, isThrow: boolean = true) {
-  const error = new TypeError(`Native webview does not support '${api}' API`);
-  if (isThrow) {
-    throw error;
-  } else {
-    return error;
-  }
 }
 
 export { NativeView };
