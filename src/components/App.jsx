@@ -62,7 +62,7 @@ class App extends React.Component {
         });
         break;
       case 'getNewUserInfo':
-        jssdk.getUserInfo().then(result => {
+        jssdk.getNewUserInfo().then(result => {
           alert(JSON.stringify(result)); // eslint-disable-line
         });
         break;

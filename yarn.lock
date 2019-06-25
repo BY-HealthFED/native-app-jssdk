@@ -718,10 +718,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@byhealth/native-app-jssdk@^2.2.0-beta.1":
-  version "2.2.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@byhealth/native-app-jssdk/-/native-app-jssdk-2.2.0-beta.1.tgz#b3e17f89bc1d1d418ec78de87e4ad64054c89962"
-  integrity sha512-iYhqmdVazLI0e3blWrh6ZdCHk9tmMgk8/tgMx9ymeW3qDPm8nVaBFshrctx/XdAcH04rxJY3YhxtUYMlpciuJA==
+"@byhealth/native-app-jssdk@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@byhealth/native-app-jssdk/-/native-app-jssdk-2.2.0.tgz#b1112eb07b3d1713c016911a22e95d1060f5f578"
+  integrity sha512-sOCMklSn0NXXF4LDFMEja7thvgsBBD9AbRRKkpuIzH+qI6XkqP1RKRf8C5nIqzTFKxFCDjHTiDIhCZTir2UHiw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
