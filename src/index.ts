@@ -228,6 +228,16 @@ export function userInfo() {
 }
 
 /**
+ * 保存网络图片到本地相册
+ * @param url 图片URL地址
+ */
+export function saveWebImage(url: string) {
+  return new Promise<void>(resolve => {
+    nativeBridge('saveWebImage', url, createCallback(resolve));
+  });
+}
+
+/**
  * 提示接口过时
  * @param before
  * @param after
