@@ -44,9 +44,15 @@ export function closeWindow() {
  * 打开原生视图窗口
  * @param android Android视图名称
  * @param ios iOS视图名称
+ * @param obj 传参对象，JSON序列化后不宜过长
  */
-export function openNativeView(android: string, ios: string) {
-  nativeBridge('openAppActivity', isAndroid ? android : ios);
+export function openNativeView(android: string, ios: string, obj?: any) {
+  let params: string = '';
+  if (obj !== undefined) {
+    params = JSON.stringify(obj);
+  }
+
+  nativeBridge('openAppActivity', isAndroid ? android : ios, params);
 }
 
 /**
