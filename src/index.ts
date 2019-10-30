@@ -3,7 +3,7 @@
  *
  * Copyright © 2016-present By-Health Co Ltd. All rights reserved.
  */
-
+import compareVersions from 'compare-versions';
 import createCallback from './lib/createCallback';
 import nativeBridge, { isAppWebview, isAndroid } from './lib/nativeBridge';
 import { ShareInfo, UserInfo, NewUserInfo } from './types/MemberAppJs';
@@ -23,6 +23,25 @@ export function isApp() {
 export function getVersion() {
   return new Promise<string>(resolve => {
     nativeBridge('getAPPVersion', createCallback(resolve));
+  });
+}
+
+/**
+ * 判断最低版本
+ * @param android Android端 最低版本
+ * @param ios iOS端 最低版本
+ * @returns {Promise<string>} 返回当前版本，iOS,4.1.0 或者 Android,4.1.0
+ */
+export function minVersion(android: string, ios: string) {
+  return getVersion().then<string>((currentVersion: string) => {
+    const [, current] = currentVersion.split(',');
+    const minimum = isAndroid ? android : ios;
+
+    if (compareVersions(current, minimum) < 0) {
+      return Promise.reject(new RangeError(`当前App版本不支持，请更新App版本到 ${minimum} 以上。`));
+    }
+
+    return currentVersion;
   });
 }
 
