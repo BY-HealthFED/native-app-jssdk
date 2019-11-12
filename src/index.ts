@@ -28,14 +28,24 @@ export function getVersion() {
 
 /**
  * 判断最低版本
- * @param android Android端 最低版本
- * @param ios iOS端 最低版本
+ * @param params.Android Android端 最低版本 例如: 4.1.0
+ * @param params.iOS iOS端 最低版本 例如: 4.1.0
  * @returns {Promise<string>} 返回当前版本，iOS,4.1.0 或者 Android,4.1.0
  */
-export function minVersion(android: string, ios: string) {
+export function minVersion({ Android, iOS }: { Android: string; iOS: string }) {
+  if (!Android) {
+    // tslint:disable-next-line: no-console
+    console.error('未传入Android端版本号。');
+  }
+
+  if (!iOS) {
+    // tslint:disable-next-line: no-console
+    console.error('未传入iOS端版本号。');
+  }
+
   return getVersion().then<string>((currentVersion: string) => {
     const [, current] = currentVersion.split(',');
-    const minimum = isAndroid ? android : ios;
+    const minimum = isAndroid ? Android : iOS;
 
     if (compareVersions(current, minimum) < 0) {
       return Promise.reject(new RangeError(`当前App版本不支持，请更新App版本到 ${minimum} 以上。`));
@@ -185,7 +195,11 @@ export function listenBack(fn: () => void) {
  * 取消监听返回按钮事件
  */
 export function unlistenBack() {
-  nativeBridge('setBack', 1, createCallback(() => {}));
+  nativeBridge(
+    'setBack',
+    1,
+    createCallback(() => {}),
+  );
 }
 
 /**
@@ -200,7 +214,11 @@ export function listenClose(fn: () => void) {
  * 取消监听关闭按钮事件（iOS有效）
  */
 export function unlistenClose() {
-  nativeBridge('setCloseCallBack', 1, createCallback(() => {}));
+  nativeBridge(
+    'setCloseCallBack',
+    1,
+    createCallback(() => {}),
+  );
 }
 
 /**
