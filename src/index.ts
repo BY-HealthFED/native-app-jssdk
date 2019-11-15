@@ -85,6 +85,21 @@ export function openNativeView(android: string, ios: string, obj?: any) {
 }
 
 /**
+ * 打开微信小程序
+ * @param appId 小程序AppId
+ * @param path 小程序内部路径
+ */
+export function openMiniProgram(appId: string, path?: string) {
+  return minVersion({
+    Android: '4.3.0',
+    iOS: '4.3.0',
+  })
+    .then(() => {
+      nativeBridge('openMiniProgram', appId, path);
+    });
+}
+
+/**
  * 设置窗口标题
  * @param title 标题内容
  */
