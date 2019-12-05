@@ -94,17 +94,11 @@ closeWindow();</code></pre>
 					<li>生成 TypeScript 类型定义，使用 VSCode 可获得更佳体验；</li>
 					<li>无回调或返回的接口，不再返回Promise对象；</li>
 					<li>重写 iOS 端调用方法，支持连续调用接口（1.x不支持）；</li>
-					<li>部分接口名称或参数变化：<ul>
-							<li>新增 <code>openNativeView(android, ios)</code> 方法</li>
-							<li>重命名 <code>userInfo()</code> =&gt; <code>getUserInfo()</code> 方法</li>
-							<li>弃用 <code>goToPage()</code> 方法</li>
-						</ul>
-					</li>
 				</ul>
 				<a href="#api-文档" id="api-文档" style="color: inherit; text-decoration: none;">
 					<h2>API 文档</h2>
 				</a>
-				<p><a href="https://by-healthfed.github.io/native-app-jssdk/">文档地址</a></p>
+				<p><a href="https://by-healthfed.github.io/native-app-jssdk/">文档地址</a></p>
 				<a href="#faq" id="faq" style="color: inherit; text-decoration: none;">
 					<h2>FAQ</h2>
 				</a>
@@ -115,6 +109,25 @@ closeWindow();</code></pre>
 				<a href="#changelog" id="changelog" style="color: inherit; text-decoration: none;">
 					<h2>Changelog</h2>
 				</a>
+				<a href="#code250code" id="code250code" style="color: inherit; text-decoration: none;">
+					<h3><code>2.5.0</code></h3>
+				</a>
+				<ul>
+					<li>【新增】 <code>openMiniProgram</code> 打开微信小程序JSSDK</li>
+				</ul>
+				<a href="#code241code" id="code241code" style="color: inherit; text-decoration: none;">
+					<h3><code>2.4.1</code></h3>
+				</a>
+				<ul>
+					<li>【新增】 <code>minVersion</code> 判断当前版本是否符合条件</li>
+					<li>【修改】 <code>openNativeView</code> 新增第三个参数，允许传递对象给窗口</li>
+				</ul>
+				<a href="#code230code" id="code230code" style="color: inherit; text-decoration: none;">
+					<h3><code>2.3.0</code></h3>
+				</a>
+				<ul>
+					<li>【新增】 <code>saveWebImage</code> 保存远程文件到相册</li>
+				</ul>
 				<a href="#code201code" id="code201code" style="color: inherit; text-decoration: none;">
 					<h3><code>2.0.1</code></h3>
 				</a>
@@ -202,7 +215,13 @@ closeWindow();</code></pre>
 						<a href="globals.html#listenclose" class="tsd-kind-icon">listen<wbr>Close</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#minversion" class="tsd-kind-icon">min<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#mobilevibrate" class="tsd-kind-icon">mobile<wbr>Vibrate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#openminiprogram" class="tsd-kind-icon">open<wbr>Mini<wbr>Program</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#opennativeview" class="tsd-kind-icon">open<wbr>Native<wbr>View</a>
