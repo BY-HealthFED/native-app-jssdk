@@ -26,14 +26,10 @@ closeWindow();
  * 生成 TypeScript 类型定义，使用 VSCode 可获得更佳体验；
  * 无回调或返回的接口，不再返回Promise对象；
  * 重写 iOS 端调用方法，支持连续调用接口（1.x不支持）；
- * 部分接口名称或参数变化：
-   - 新增 `openNativeView(android, ios)` 方法
-   - 重命名 `userInfo()` => `getUserInfo()` 方法
-   - 弃用 `goToPage()` 方法
 
 ## API 文档
 
-[文档地址](https://by-healthfed.github.io/native-app-jssdk/)
+[文档地址](https://by-healthfed.github.io/native-app-jssdk/)
 
 ## FAQ
  - Android的 scanQrCode 方法会去掉防伪码前面的url，而iOS不会；
@@ -41,6 +37,17 @@ closeWindow();
 
 
 ## Changelog
+
+
+### `2.5.0`
+ - 【新增】 `openMiniProgram` 打开微信小程序JSSDK
+
+### `2.4.1`
+ - 【新增】 `minVersion` 判断当前版本是否符合条件
+ - 【修改】 `openNativeView` 新增第三个参数，允许传递对象给窗口
+
+### `2.3.0`
+ - 【新增】 `saveWebImage` 保存远程文件到相册
 
 ### `2.0.1`
  - 修复 NodeJs 服务端找不到 window 的问题；
