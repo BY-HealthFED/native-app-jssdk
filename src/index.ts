@@ -171,6 +171,9 @@ export function getUserInfo() {
   });
 }
 
+/**
+ * 获取用户信息(新)
+ */
 export function getNewUserInfo() {
   return new Promise<NewUserInfo>(resolve => {
     nativeBridge('getNewUserInfo', createCallback(resolve));
@@ -286,13 +289,16 @@ export function userInfo() {
 }
 
 /**
- * 保存网络图片到本地相册
+ * 保存网络图片到本地相册，保存成功回调返回true，失败则回调返回false
  * @param url 图片URL地址
  */
 export function saveWebImage(url: string) {
-  return new Promise<void>(resolve => {
+  return minVersion({
+    Android: '5.1.5',
+    iOS: '5.1.5',
+  }).then(() => new Promise<boolean>(resolve => {
     nativeBridge('saveWebImage', url, createCallback(resolve));
-  });
+  }))
 }
 
 /**
