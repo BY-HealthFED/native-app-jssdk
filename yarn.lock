@@ -718,10 +718,12 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@byhealth/native-app-jssdk@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@byhealth/native-app-jssdk/-/native-app-jssdk-2.2.0.tgz#b1112eb07b3d1713c016911a22e95d1060f5f578"
-  integrity sha512-sOCMklSn0NXXF4LDFMEja7thvgsBBD9AbRRKkpuIzH+qI6XkqP1RKRf8C5nIqzTFKxFCDjHTiDIhCZTir2UHiw==
+"@byhealth/native-app-jssdk@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@byhealth/native-app-jssdk/-/native-app-jssdk-2.5.0.tgz#03c277fd721e1d81559d87cf441c12200c876bb6"
+  integrity sha512-532TRXlHnXLebkZSpJ37gWoiP2t8ZBZneq4IYlI7Z1mK5U+72tWgL5BVGtmy1T+/jOUpWDjWem97DkUcV8eNsg==
+  dependencies:
+    compare-versions "^3.5.1"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -1868,6 +1870,11 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/commondir/download/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=
+
+compare-versions@^3.5.1:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
+  integrity sha512-W6Af2Iw1z4CB7q4uU4hv646dW9GQuBM+YpC0UvUCWSD8w90SJjp+ujJuXaEMtAXBtSqGfMPuFOVn4/+FlaqfBA==
 
 component-emitter@^1.2.1:
   version "1.2.1"

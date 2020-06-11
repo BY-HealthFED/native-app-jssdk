@@ -20,6 +20,7 @@ class App extends React.Component {
         { title: '显示右上角导航按钮', btn: 'showNavRightButton' },
         { title: '隐藏右上角导航按钮', btn: 'hiddenNavRightButton' },
         { title: '当前是否在App环境', btn: 'isApp' },
+        { title: '保存图片到相册', btn: 'saveWebImage' },
         { title: '开始播放音乐', btn: 'playMusic' },
         { title: '暂停播放', btn: 'pauseMusic' },
         { title: '恢复播放', btn: 'resumeMusic' },
@@ -77,6 +78,9 @@ class App extends React.Component {
         break;
       case 'isApp':
         jssdk.alert(jssdk.isApp());
+        break;
+      case 'saveWebImage':
+        jssdk.saveWebImage('https://upload-yyj.by-health.com/upload/images/20190821153113285.jpg');
         break;
       case 'pauseMusic':
         jssdk.pauseMusic();
