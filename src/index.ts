@@ -289,16 +289,11 @@ export function userInfo() {
 }
 
 /**
- * 保存网络图片到本地相册，保存成功回调返回true，失败则回调返回false
+ * 保存网络图片到本地相册
  * @param url 图片URL地址
  */
 export function saveWebImage(url: string) {
-  return minVersion({
-    Android: '5.1.5',
-    iOS: '5.1.5',
-  }).then(() => new Promise<boolean>(resolve => {
-    nativeBridge('saveWebImage', url, createCallback(resolve));
-  }))
+  nativeBridge('saveWebImage', url);
 }
 
 /**
