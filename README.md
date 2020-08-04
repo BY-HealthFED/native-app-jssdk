@@ -38,6 +38,8 @@ closeWindow();
 
 ## Changelog
 
+### `2.5.3`
+ - 【修改】 更新 `scanQrCode` 和 `scanBarCode` 调用新接口
 
 ### `2.5.0`
  - 【新增】 `openMiniProgram` 打开微信小程序JSSDK
