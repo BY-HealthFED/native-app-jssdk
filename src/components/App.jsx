@@ -1,3 +1,5 @@
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-alert */
 import React from 'react';
 import './App.scss';
 import * as jssdk from '@byhealth/native-app-jssdk';
@@ -31,6 +33,7 @@ class App extends React.Component {
         { title: '调用手机振动', btn: 'vibrate' },
         { title: '监听返回按钮事件', btn: 'listenBack' },
         { title: '取消监听返回按钮事件', btn: 'unlistenBack' },
+        { title: '打开微信小程序', btn: 'openMiniProgram' },
       ],
     };
   }
@@ -118,6 +121,11 @@ class App extends React.Component {
         break;
       case 'unlistenBack':
         jssdk.unlistenBack();
+        break;
+      case 'openMiniProgram':
+        const appId = window.prompt('AppID:');
+        const path = window.prompt('Path:');
+        jssdk.openMiniProgram(appId, path);
         break;
       default:
         break;
