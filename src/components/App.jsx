@@ -34,6 +34,7 @@ class App extends React.Component {
         { title: '监听返回按钮事件', btn: 'listenBack' },
         { title: '取消监听返回按钮事件', btn: 'unlistenBack' },
         { title: '打开微信小程序', btn: 'openMiniProgram' },
+        { title: '打开原生页面', btn: 'openNativeView' },
       ],
     };
   }
@@ -126,6 +127,12 @@ class App extends React.Component {
         const appId = window.prompt('AppID:');
         const path = window.prompt('Path:');
         jssdk.openMiniProgram(appId, path);
+        break;
+      case 'openNativeView':
+        const ios = window.prompt('iOS view:');
+        const android = window.prompt('Android view:');
+        const params = window.prompt('参数JSON:');
+        jssdk.openNativeView(android, ios, params);
         break;
       default:
         break;
