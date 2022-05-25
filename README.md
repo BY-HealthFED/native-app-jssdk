@@ -38,6 +38,10 @@ closeWindow();
 
 ## Changelog
 
+### `2.6.0`
+ - 【新增】 `getDeviceInfo` 获取设备信息接口
+ - 【修改】 `createCallback` 添加超时参数
+
 ### `2.5.3`
  - 【修改】 更新 `scanQrCode` 和 `scanBarCode` 调用新接口
 
