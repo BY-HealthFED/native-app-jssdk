@@ -16,13 +16,34 @@ let cbIdentity = 0;
  * @param once Execute only once.
  * @ignore
  */
-function createCallback(fn: (args: any) => void, once?: boolean): string {
+function createCallback(
+  resolve: (args: any) => void,
+  reject: (err: { code: string; message: string }) => void,
+  once = false,
+  timeoutMS = -1,
+): string {
   const fnName = `__native__${++cbIdentity}`;
 
-  (window as any)[fnName] = (args: any) => {
+  let timer: any;
+  if (timeoutMS > 0) {
+    timer = setTimeout(() => {
+      reject({ code: '1', message: '[APP-SDK]: Call SDK timeout' });
+    }, timeoutMS);
+  }
+
+  (window as any)[fnName] = (args: any, err: any) => {
     try {
-      fn(args);
+      if (err) {
+        const [code, message] = err.split(':');
+        reject({ code, message });
+      } else {
+        resolve(args);
+      }
     } finally {
+      if (timer) {
+        clearTimeout(timer);
+      }
+
       if (once !== false) {
         delete (window as any)[fnName];
       }

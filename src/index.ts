@@ -6,8 +6,10 @@
 import compareVersions from 'compare-versions';
 import createCallback from './lib/createCallback';
 import nativeBridge, { isAppWebview, isAndroid } from './lib/nativeBridge';
-import { ShareInfo, UserInfo, NewUserInfo } from './types/MemberAppJs';
+import { ShareInfo, UserInfo, NewUserInfo, DeviceInfo } from './types/MemberAppJs';
 import * as NativeView from './nativeView';
+
+function noop() {}
 
 /**
  * 当前是否在App环境
@@ -21,8 +23,8 @@ export function isApp() {
  * @returns {Promise<string>} iOS,4.1.0 或者 Android,4.1.0
  */
 export function getVersion() {
-  return new Promise<string>(resolve => {
-    nativeBridge('getAPPVersion', createCallback(resolve));
+  return new Promise<string>((resolve, reject) => {
+    nativeBridge('getAPPVersion', createCallback(resolve, reject));
   });
 }
 
@@ -93,10 +95,9 @@ export function openMiniProgram(appId: string, path?: string) {
   return minVersion({
     Android: '4.3.0',
     iOS: '4.3.0',
-  })
-    .then(() => {
-      nativeBridge('openMiniProgram', appId, path);
-    });
+  }).then(() => {
+    nativeBridge('openMiniProgram', appId, path);
+  });
 }
 
 /**
@@ -116,7 +117,7 @@ export function setTitle(title: string) {
  * @param onClick 点击触发事件
  */
 export function showNavRightButton(btnText: string, onClick: () => void) {
-  nativeBridge('showNavRightButton', btnText, createCallback(onClick, false));
+  nativeBridge('showNavRightButton', btnText, createCallback(onClick, noop, false));
 }
 
 /**
@@ -130,8 +131,8 @@ export function hiddenNavRightButton() {
  * 扫描二维码
  */
 export function scanQrCode() {
-  return new Promise<string>(resolve => {
-    nativeBridge('scanNewQrBarCode', '1', createCallback(resolve));
+  return new Promise<string>((resolve, reject) => {
+    nativeBridge('scanNewQrBarCode', '1', createCallback(resolve, reject));
   });
 }
 
@@ -139,8 +140,8 @@ export function scanQrCode() {
  * 扫描条形码
  */
 export function scanBarCode() {
-  return new Promise<string>(resolve => {
-    nativeBridge('scanNewQrBarCode', 'other', createCallback(resolve));
+  return new Promise<string>((resolve, reject) => {
+    nativeBridge('scanNewQrBarCode', 'other', createCallback(resolve, reject));
   });
 }
 
@@ -166,8 +167,8 @@ export function batchSendSMS(mobiles: string[], message: string) {
  * 获取用户信息
  */
 export function getUserInfo() {
-  return new Promise<UserInfo>(resolve => {
-    nativeBridge('getUserInfo', createCallback(resolve));
+  return new Promise<UserInfo>((resolve, reject) => {
+    nativeBridge('getUserInfo', createCallback(resolve, reject));
   });
 }
 
@@ -175,9 +176,24 @@ export function getUserInfo() {
  * 获取用户信息(新)
  */
 export function getNewUserInfo() {
-  return new Promise<NewUserInfo>(resolve => {
-    nativeBridge('getNewUserInfo', createCallback(resolve));
+  return new Promise<NewUserInfo>((resolve, reject) => {
+    nativeBridge('getNewUserInfo', createCallback(resolve, reject));
   });
+}
+
+/**
+ * 获取设备信息
+ */
+export function getDeviceInfo() {
+  return minVersion({
+    Android: '5.2.61',
+    iOS: '5.2.61',
+  }).then(
+    () =>
+      new Promise<DeviceInfo>((resolve, reject) => {
+        nativeBridge('getDeviceInfo', createCallback(resolve, reject));
+      }),
+  );
 }
 
 /**
@@ -196,8 +212,8 @@ export function alert(message: string) {
  * @param url 分享链接
  */
 export function share({ title, content, image, url }: ShareInfo) {
-  return new Promise<void>(resolve => {
-    nativeBridge('share', title, content, image, url, createCallback(resolve));
+  return new Promise<void>((resolve, reject) => {
+    nativeBridge('share', title, content, image, url, createCallback(resolve, reject));
   });
 }
 
@@ -206,18 +222,14 @@ export function share({ title, content, image, url }: ShareInfo) {
  * @param fn 回调事件
  */
 export function listenBack(fn: () => void) {
-  nativeBridge('setBack', 0, createCallback(fn, false));
+  nativeBridge('setBack', 0, createCallback(fn, noop, false));
 }
 
 /**
  * 取消监听返回按钮事件
  */
 export function unlistenBack() {
-  nativeBridge(
-    'setBack',
-    1,
-    createCallback(() => {}),
-  );
+  nativeBridge('setBack', 1, createCallback(noop, noop));
 }
 
 /**
@@ -225,18 +237,14 @@ export function unlistenBack() {
  * @param fn 回调事件
  */
 export function listenClose(fn: () => void) {
-  nativeBridge('setCloseCallBack', 0, createCallback(fn, false));
+  nativeBridge('setCloseCallBack', 0, createCallback(fn, noop, false));
 }
 
 /**
  * 取消监听关闭按钮事件（iOS有效）
  */
 export function unlistenClose() {
-  nativeBridge(
-    'setCloseCallBack',
-    1,
-    createCallback(() => {}),
-  );
+  nativeBridge('setCloseCallBack', 1, createCallback(noop, noop));
 }
 
 /**

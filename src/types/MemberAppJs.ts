@@ -495,6 +495,58 @@ export interface ShareInfo {
 }
 
 /**
+ * 设备信息
+ *
+ * @example
+ * iPhone:
+ *  {
+ *    "brand": "Apple",
+ *    "phoneName": "iPhone 12",
+ *    "osVersion": "IOS 15.4",
+ *    "screenDpi": "2532*1170",
+ *    "operators": "中国移动",
+ *    "networkType": "4G",
+ *  }
+ *
+ * @example
+ * Redmi 5:
+ *  {
+ *    "brand": "xiaomi",
+ *    "phoneName": "Redmi 5 Plus",
+ *    "osVersion": "android 7.1.2",
+ *    "screenDpi": "2030*1080",
+ *    "operators": "中国移动",
+ *    "networkType": "WIFI",
+ *  }
+ */
+export interface DeviceInfo {
+  /**
+   * 手机品牌：Apple xiaomi
+   */
+  brand: string;
+  /**
+   * 机型代码
+   */
+  phoneName: string;
+  /**
+   * 操作系统版本
+   */
+  osVersion: string;
+  /**
+   * 屏幕分辨率（高度 * 宽度，2532 * 1170）
+   */
+  screenDpi: string;
+  /**
+   * 电信运营商（中国移动、中国联通、中国电信）
+   */
+  operators: string;
+  /**
+   * 网络类型（3G、4G、5G、WIFI）
+   */
+  networkType: string;
+}
+
+/**
  * Java native bridge
  * @ignore
  */
