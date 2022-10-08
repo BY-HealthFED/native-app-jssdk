@@ -305,6 +305,36 @@ export function saveWebImage(url: string) {
 }
 
 /**
+ * 获取用户是否拥有某个权限
+ * @param permissionName 权限名称
+ */
+export function getUserPermission(permissionName: string) {
+  return minVersion({
+    Android: '5.3.1',
+    iOS: '5.3.1',
+  }).then(
+    () =>
+      new Promise((resolve, reject) => {
+        nativeBridge('getUserPermission', permissionName, createCallback(resolve, reject));
+      }),
+  );
+}
+
+/**
+ * 跳到首页某个tab
+ * @param tabIndex Tab序号
+ * @param param 附带的参数
+ */
+export function gotoHomePageTabIndex(tabIndex: string, param: string) {
+  return minVersion({
+    Android: '5.3.1',
+    iOS: '5.3.1',
+  }).then(() => {
+    nativeBridge('gotoHomePageTabIndex', tabIndex, param);
+  });
+}
+
+/**
  * 提示接口过时
  * @param before
  * @param after
