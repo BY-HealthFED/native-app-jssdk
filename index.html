@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>@byhealth/native-app-jssdk</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for @byhealth/native-app-jssdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> @byhealth/native-app-jssdk</h1>
+			<h1>@byhealth/native-app-jssdk</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 				<a href="#by-health-native-app-jssdk" id="by-health-native-app-jssdk" style="color: inherit; text-decoration: none;">
 					<h1>By-Health Native App Jssdk</h1>
 				</a>
-				<p>汤臣倍健营养家App</p>
+				<p>汤臣倍健营养家 App</p>
 				<a href="#安装" id="安装" style="color: inherit; text-decoration: none;">
 					<h3>安装</h3>
 				</a>
@@ -78,13 +78,12 @@
 				<a href="#使用" id="使用" style="color: inherit; text-decoration: none;">
 					<h3>使用</h3>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { scanQrCode, closeWindow } <span class="hljs-keyword">from</span> <span class="hljs-string">'@byhealth/native-app-jssdk'</span>;
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { scanQrCode, closeWindow } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@byhealth/native-app-jssdk&#x27;</span>;
 
-scanQrCode()
-  .then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
-    <span class="hljs-comment">// result 是识别后的结果</span>
-    <span class="hljs-built_in">console</span>.log(result);
-  });
+scanQrCode().then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+  <span class="hljs-comment">// result 是识别后的结果</span>
+  <span class="hljs-built_in">console</span>.log(result);
+});
 
 closeWindow();</code></pre>
 				<a href="#更新" id="更新" style="color: inherit; text-decoration: none;">
@@ -92,8 +91,8 @@ closeWindow();</code></pre>
 				</a>
 				<ul>
 					<li>生成 TypeScript 类型定义，使用 VSCode 可获得更佳体验；</li>
-					<li>无回调或返回的接口，不再返回Promise对象；</li>
-					<li>重写 iOS 端调用方法，支持连续调用接口（1.x不支持）；</li>
+					<li>无回调或返回的接口，不再返回 Promise 对象；</li>
+					<li>重写 iOS 端调用方法，支持连续调用接口（1.x 不支持）；</li>
 				</ul>
 				<a href="#api-文档" id="api-文档" style="color: inherit; text-decoration: none;">
 					<h2>API 文档</h2>
@@ -103,42 +102,62 @@ closeWindow();</code></pre>
 					<h2>FAQ</h2>
 				</a>
 				<ul>
-					<li>Android的 scanQrCode 方法会去掉防伪码前面的url，而iOS不会；</li>
-					<li>Android和iOS不允许重复调用 playMusic 播放音乐；</li>
+					<li>Android 的 scanQrCode 方法会去掉防伪码前面的 url，而 iOS 不会；</li>
+					<li>Android 和 iOS 不允许重复调用 playMusic 播放音乐；</li>
 				</ul>
 				<a href="#changelog" id="changelog" style="color: inherit; text-decoration: none;">
 					<h2>Changelog</h2>
 				</a>
-				<a href="#code250code" id="code250code" style="color: inherit; text-decoration: none;">
+				<a href="#270" id="270" style="color: inherit; text-decoration: none;">
+					<h3><code>2.7.0</code></h3>
+				</a>
+				<ul>
+					<li>【新增】<code>getUserPermission</code> 获取用户权限信息</li>
+					<li>【新增】<code>gotoHomePageTabIndex</code> 跳到首页某个 tab</li>
+				</ul>
+				<a href="#260" id="260" style="color: inherit; text-decoration: none;">
+					<h3><code>2.6.0</code></h3>
+				</a>
+				<ul>
+					<li>【新增】 <code>getDeviceInfo</code> 获取设备信息接口</li>
+					<li>【修改】 <code>createCallback</code> 添加超时参数</li>
+				</ul>
+				<a href="#253" id="253" style="color: inherit; text-decoration: none;">
+					<h3><code>2.5.3</code></h3>
+				</a>
+				<ul>
+					<li>【修改】 更新 <code>scanQrCode</code> 和 <code>scanBarCode</code> 调用新接口</li>
+				</ul>
+				<a href="#250" id="250" style="color: inherit; text-decoration: none;">
 					<h3><code>2.5.0</code></h3>
 				</a>
 				<ul>
-					<li>【新增】 <code>openMiniProgram</code> 打开微信小程序JSSDK</li>
+					<li>【新增】 <code>openMiniProgram</code> 打开微信小程序 JSSDK</li>
 				</ul>
-				<a href="#code241code" id="code241code" style="color: inherit; text-decoration: none;">
+				<a href="#241" id="241" style="color: inherit; text-decoration: none;">
 					<h3><code>2.4.1</code></h3>
 				</a>
 				<ul>
 					<li>【新增】 <code>minVersion</code> 判断当前版本是否符合条件</li>
 					<li>【修改】 <code>openNativeView</code> 新增第三个参数，允许传递对象给窗口</li>
 				</ul>
-				<a href="#code230code" id="code230code" style="color: inherit; text-decoration: none;">
+				<a href="#230" id="230" style="color: inherit; text-decoration: none;">
 					<h3><code>2.3.0</code></h3>
 				</a>
 				<ul>
 					<li>【新增】 <code>saveWebImage</code> 保存远程文件到相册</li>
 				</ul>
-				<a href="#code201code" id="code201code" style="color: inherit; text-decoration: none;">
+				<a href="#201" id="201" style="color: inherit; text-decoration: none;">
 					<h3><code>2.0.1</code></h3>
 				</a>
 				<ul>
 					<li>修复 NodeJs 服务端找不到 window 的问题；</li>
 				</ul>
-				<a href="#code200code" id="code200code" style="color: inherit; text-decoration: none;">
+				<a href="#200" id="200" style="color: inherit; text-decoration: none;">
 					<h3><code>2.0.0</code></h3>
 				</a>
 				<ul>
-					<li>使用 TypeScript 重写SDK；</li>
+					<li>使用 TypeScript 重写 SDK；</li>
 					<li>支持 ES6 语法导出模块；</li>
 					<li>支持多个接口连续调用；</li>
 				</ul>
@@ -173,6 +192,9 @@ closeWindow();</code></pre>
 						<a href="enums/roletype.html" class="tsd-kind-icon">Role<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/deviceinfo.html" class="tsd-kind-icon">Device<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/newuserinfo.html" class="tsd-kind-icon">New<wbr>User<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -191,16 +213,25 @@ closeWindow();</code></pre>
 						<a href="globals.html#closewindow" class="tsd-kind-icon">close<wbr>Window</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#getdeviceinfo" class="tsd-kind-icon">get<wbr>Device<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getnewuserinfo" class="tsd-kind-icon">get<wbr>New<wbr>User<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getuserinfo" class="tsd-kind-icon">get<wbr>User<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#getuserpermission" class="tsd-kind-icon">get<wbr>User<wbr>Permission</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getversion" class="tsd-kind-icon">get<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#goback" class="tsd-kind-icon">go<wbr>Back</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#gotohomepagetabindex" class="tsd-kind-icon">goto<wbr>Home<wbr>Page<wbr>Tab<wbr>Index</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#hiddennavrightbutton" class="tsd-kind-icon">hidden<wbr>Nav<wbr>Right<wbr>Button</a>
@@ -219,6 +250,9 @@ closeWindow();</code></pre>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#mobilevibrate" class="tsd-kind-icon">mobile<wbr>Vibrate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#noop" class="tsd-kind-icon">noop</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#openminiprogram" class="tsd-kind-icon">open<wbr>Mini<wbr>Program</a>
@@ -281,57 +315,7 @@ closeWindow();</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
@@ -341,6 +325,5 @@ closeWindow();</code></pre>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
